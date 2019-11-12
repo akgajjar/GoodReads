@@ -2,63 +2,31 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>
+ <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700%7CAllura" rel="stylesheet">
 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700%7CAllura" rel="stylesheet">
-	
-	<!-- Stylesheets -->
-	
+   
 	<link href="common-css/bootstrap.css" rel="stylesheet">
 	
 	<link href="common-css/ionicons.css" rel="stylesheet">
 	
 	<link href="common-css/fluidbox.min.css" rel="stylesheet">
 	
-	<link href="/goodreadsnew/WebContent/01-cv-portfolio/css/styles.css" rel="stylesheet">
+	<link href="01-cv-portfolio/css/styles.css" rel="stylesheet">
 	
 	<link href="01-cv-portfolio/css/responsive.css" rel="stylesheet">
 	
+
+<head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 </head>
-<body>
-<header>
+ <body>
+	<header>
 		<div class="container">
-			<div class="heading-wrapper">
-				<div class="row">
-					<div class="col-sm-6 col-md-6 col-lg-4">
-						<div class="info">
-							<i class="icon ion-ios-location-outline"></i>
-							<div class="right-area">
-								<h5>3008 Sarah Drive</h5>
-								<h5>Franklin,LA 70538</h5>
-							</div><!-- right-area -->
-						</div><!-- info -->
-					</div><!-- col-sm-4 -->
-					
-					<div class="col-sm-6 col-md-6 col-lg-4">
-						<div class="info">
-							<i class="icon ion-ios-telephone-outline"></i>
-							<div class="right-area">
-								<h5>337-4139538</h5>
-								<h6>MIN - FRI,8AM - 7PM</h6>
-							</div><!-- right-area -->
-						</div><!-- info -->
-					</div><!-- col-sm-4 -->
-					
-					<div class="col-sm-6 col-md-6 col-lg-4">
-						<div class="info">
-							<i class="icon ion-ios-chatboxes-outline"></i>
-							<div class="right-area">
-								<h5>contact@colorlib.com</h5>
-								<h6>REPLY IN 24 HOURS</h6>
-							</div><!-- right-area -->
-						</div><!-- info -->
-					</div><!-- col-sm-4 -->
-				</div><!-- row -->
-			</div><!-- heading-wrapper -->
+
 			
-			<a class="downlad-btn" href="#">Download CV</a>
+		
 		</div><!-- container -->
 	</header>
 	
@@ -89,5 +57,29 @@
 		</div><!-- container -->
 	</section><!-- intro-section -->
 	
-</body>
+	<section class="portfolio-section section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4">
+					
+				</div><!-- col-sm-4 -->
+			<button type="button" class="btn btn-warning">Edit profile</button>
+			</div><!-- row -->
+			
+		</div><!-- container -->
+		
+							
+					
+    <!-- loader -->
+  
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
 </html>
