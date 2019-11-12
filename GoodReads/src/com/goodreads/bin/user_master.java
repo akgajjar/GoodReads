@@ -157,6 +157,10 @@ public class user_master {
 	public void setOrders(Set<order_master> orders) {
 		this.orders = orders;
 	}
+	public void setU_Pincode(String parameter) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	
