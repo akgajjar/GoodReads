@@ -1,0 +1,14 @@
+ * user master service		
+		Resource r = new ClassPathResource("beans.xml");
+		BeanFactory factory = new XmlBeanFactory(r);
+		User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
+		
+ * book category master service
+		Resource r = new ClassPathResource("beans.xml");
+		BeanFactory factory = new XmlBeanFactory(r);
+		Book_category_masterService b_cat=(Book_category_masterService) factory.getBean("book_category_masterservice");
+
+ * book master service
+		Resource r = new ClassPathResource("beans.xml");
+		BeanFactory factory = new XmlBeanFactory(r);		
+		Book_masterService bs= (Book_masterService) factory.getBean("book_masterservice");
