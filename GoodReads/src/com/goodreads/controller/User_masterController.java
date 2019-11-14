@@ -29,7 +29,6 @@ public class User_masterController extends HttpServlet {
 		
 		response.setContentType("text/html");
 		String action=request.getParameter("action");
-		System.out.println("hiii"+action);
 		if(action.equalsIgnoreCase("signup"))
 		{
 			user_master u=new user_master();
@@ -47,12 +46,12 @@ public class User_masterController extends HttpServlet {
 			u.setU_Type("user");
 			u.setU_Block(false);
 			u.setU_Creation_Date(new Timestamp(new Date().getTime()));
+			
 			Resource r = new ClassPathResource("beans.xml");
 			BeanFactory factory = new XmlBeanFactory(r);
 			User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
 			
 			sdao.saveUser(u);
-			
 			response.sendRedirect("index.jsp");
 
 	}
