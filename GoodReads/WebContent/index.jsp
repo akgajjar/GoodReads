@@ -56,7 +56,8 @@
                                 </ul>
                             </li>
                             <li><a href="contact.html" style="outline: none; cursor: inherit;">Contact</a></li>
-                                             <li><a href="login.jsp" style="outline: none; cursor: inherit;">Login</a></li>
+                            <li><a href="login.jsp" style="outline: none; cursor: inherit;">Login</a></li>
+                            <li><a href="admin/login.jsp" style="outline: none; cursor: inherit;">Admin Login</a></li>
                         </ul>
                     </nav>
                     <!-- //nav -->

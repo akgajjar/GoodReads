@@ -29,6 +29,7 @@ public class User_masterController extends HttpServlet {
 		
 		response.setContentType("text/html");
 		String action=request.getParameter("action");
+		System.out.println("hiii"+action);
 		if(action.equalsIgnoreCase("signup"))
 		{
 			user_master u=new user_master();
