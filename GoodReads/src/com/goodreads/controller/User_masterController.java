@@ -2,6 +2,8 @@ package com.goodreads.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,25 +20,17 @@ import org.springframework.core.io.Resource;
 import com.goodreads.bin.user_master;
 import com.goodreads.service.User_masterService;
 
-/**
- * Servlet implementation class User_masterController
- */
+
 @WebServlet("/User_masterController")
 public class User_masterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
 		response.setContentType("text/html");
-		PrintWriter out=response.getWriter();
 		String action=request.getParameter("action");
 		if(action.equalsIgnoreCase("submit"))
 		{
-			int result=0;
 			user_master u=new user_master();
 			u.setU_Fname(request.getParameter("fname"));
 			u.setU_Mname(request.getParameter("mname"));
@@ -49,13 +43,21 @@ public class User_masterController extends HttpServlet {
 			u.setU_State(request.getParameter("state"));
 			u.setU_Pincode(Integer.parseInt(request.getParameter("pincode")));
 			u.setU_Password(request.getParameter("password"));
+			u.setU_Type("user");
+			u.setU_Block(false);
+			u.setU_Creation_Date(new Timestamp(new Date().getTime()));
+			
 			Resource r = new ClassPathResource("beans.xml");
 			BeanFactory factory = new XmlBeanFactory(r);
 			User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
 			
 			sdao.saveUser(u);
+<<<<<<< HEAD
 			
 			response.sendRedirect("login.jsp");
+=======
+			response.sendRedirect("index.jsp");
+>>>>>>> branch 'master' of https://github.com/akgajjar/GoodReads.git
 
 	}
 
