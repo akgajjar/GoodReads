@@ -69,7 +69,7 @@
 										<div class="form-input editContent" style="outline: none; cursor: inherit;">
 											<input type="password" name="cpassword" placeholder="Confirm Password" required="">
 										</div>
-										<div class="form-input editContent" style="outline: none; cursor: inherit;"><input type="submit" class="btn" name="action" id="action" style="outline: none; cursor: inherit;" value="Signup"></div>
+										<div class="form-input editContent" style="outline: none; cursor: inherit;"><input type="submit" class="btn btn-primary" name="action" id="action" style="outline: none; cursor: inherit;" value="Signup"></div>
 									</div>
 									<h6 class="already editContent" style="outline: none; cursor: inherit;">Already have an account? <a href="login.jsp"><span class="editContent" style="outline: none; cursor: inherit;">Login Here<span></span></span></a></h6>
 								</form>

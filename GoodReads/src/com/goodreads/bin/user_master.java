@@ -20,6 +20,7 @@ public class user_master {
 	private String U_Address2;
 	private String U_city;
 	private String U_State;
+	private String U_Gender;
 	private int U_Pincode;
 	private Blob U_Img;
 	private String U_Type;
@@ -107,6 +108,13 @@ public class user_master {
 	}
 	public void setU_Pincode(int u_Pincode) {
 		U_Pincode = u_Pincode;
+	}
+	
+	public String getU_Gender() {
+		return U_Gender;
+	}
+	public void setU_Gender(String u_Gender) {
+		U_Gender = u_Gender;
 	}
 	public Blob getU_Img() {
 		return U_Img;

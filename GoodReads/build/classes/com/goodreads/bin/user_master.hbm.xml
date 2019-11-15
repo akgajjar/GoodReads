@@ -44,6 +44,9 @@
         <property name="U_Pincode" type="int" length="10" not-null="true">
             <column name="U_PINCODE" />
         </property>
+        <property name="U_Gender" type="java.lang.String" length="10" not-null="false">
+            <column name="U_GENDER" />
+        </property>
         <property name="U_Img" type="java.sql.Blob"  not-null="false">
             <column name="U_IMG" />
         </property>
