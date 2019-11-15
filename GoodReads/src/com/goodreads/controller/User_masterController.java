@@ -34,7 +34,7 @@ public class User_masterController extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		String action=request.getParameter("action");
-		if(action.equalsIgnoreCase("signup"))
+		if(action.equalsIgnoreCase("submit"))
 		{
 			int result=0;
 			user_master u=new user_master();
@@ -55,7 +55,7 @@ public class User_masterController extends HttpServlet {
 			
 			sdao.saveUser(u);
 			
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("login.jsp");
 
 	}
 

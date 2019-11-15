@@ -216,7 +216,7 @@ p {
 		-webkit-appearance: none;
 	}
 	button.btn {
-		background:#d8137f;
+		background:#bb0000;
 		color: #fff;
 		text-decoration: none;
 		padding:0px 30px;
@@ -232,7 +232,7 @@ p {
 	}
 	button.btn:hover {
 		opacity:0.8;
-		background-color:#b70b6f;
+		background-color:#ff0000;
 	}
 	.form-inner-cont {
 		text-align: center;
