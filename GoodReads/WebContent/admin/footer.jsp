@@ -17,5 +17,4 @@
     <script src=" ./js/front.js"></script>
   </body>
 
-<!-- Mirrored from demo.bootstrapious.com/admin-premium/1-4-5/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Nov 2019 02:05:00 GMT -->
 </html>

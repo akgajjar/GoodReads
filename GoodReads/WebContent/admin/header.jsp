@@ -140,6 +140,14 @@
                 <li><a href="charts-gauge-sparkline.html">Gauge + Sparkline</a></li>
               </ul>
             </li>
+            
+            <li><a href="#adminDropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-users"></i>Users </a>
+              <ul id="adminDropdown" class="collapse list-unstyled ">
+                <li><a href="addadmin.jsp">Add Admin</a></li>
+                <li><a href="showallusers.jsp">Show All Users</a></li>
+              </ul>
+            </li>
+            
             <li><a href="#formsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Forms </a>
               <ul id="formsDropdown" class="collapse list-unstyled ">
                 <li><a href="forms.html">Basic forms</a></li>
