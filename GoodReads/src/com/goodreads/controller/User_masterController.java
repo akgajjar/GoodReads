@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.User;
 import org.springframework.beans.factory.BeanFactory;
@@ -31,6 +32,7 @@ public class User_masterController extends HttpServlet {
 		String action=request.getParameter("action");
 		if(action.equalsIgnoreCase("submit"))
 		{
+		
 			user_master u=new user_master();
 			u.setU_Fname(request.getParameter("fname"));
 			u.setU_Mname(request.getParameter("mname"));
@@ -52,14 +54,29 @@ public class User_masterController extends HttpServlet {
 			User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
 			
 			sdao.saveUser(u);
-<<<<<<< HEAD
-			
-			response.sendRedirect("login.jsp");
-=======
-			response.sendRedirect("index.jsp");
->>>>>>> branch 'master' of https://github.com/akgajjar/GoodReads.git
+
 
 	}
+		else if(action.equalsIgnoreCase("Login"))
+		{
+				String email = request.getParameter("email");
+				String password = request.getParameter("password");
+				Resource r = new ClassPathResource("beans.xml");
+				BeanFactory factory = new XmlBeanFactory(r);
+				User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
+				user_master user = sdao.Check_Login(email, password);
+				if(user!=null)
+				{
+					HttpSession session=request.getSession();
+					session.setAttribute("user", user);
+					request.getRequestDispatcher("index.jsp").forward(request, response);
+				}
+				else
+				{
+					System.out.println("Your Username Or Password Is Incorrect");
+					request.getRequestDispatcher("login.jsp").include(request, response);
+				}
+			}
 
 	}
 }

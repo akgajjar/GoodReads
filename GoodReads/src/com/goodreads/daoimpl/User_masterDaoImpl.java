@@ -45,7 +45,7 @@ public class User_masterDaoImpl implements User_masterDao {
 	@Override
 	public user_master Check_Login(String U_Email, String U_Password) {
 		Object[] params  = {U_Email,U_Password};
-		List<user_master> l= template.find("select u from user_master u where u.U_Email=? and u.U_Password", params);
+		List<user_master> l= template.find("select u from user_master u where u.U_Email=? and u.U_Password=?", params);
 		if(l.size()>0)
 			return l.get(0);
 		return null;
