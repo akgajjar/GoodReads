@@ -68,8 +68,8 @@ public class User_masterServiceImpl implements User_masterService {
 		ForgotPassword fpass = fetchEmailData(email);
 		if (fpass != null) {
 
-			final String Senderid = "amn.tms2017@gmail.com";
-			final String password = "9714670032";
+			final String Senderid = "goodreads.daiict@gmail.com";
+			final String password = "goodreads1234";
 
 			Properties props = new Properties();
 			props.put("mail.smtp.auth", "true");
