@@ -30,6 +30,9 @@ public class User_masterController extends HttpServlet {
 		
 		response.setContentType("text/html");
 		String action=request.getParameter("action");
+		Resource r = new ClassPathResource("beans.xml");
+		BeanFactory factory = new XmlBeanFactory(r);
+		User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
 		if(action.equalsIgnoreCase("Signup"))
 		{
 		
@@ -50,9 +53,7 @@ public class User_masterController extends HttpServlet {
 			u.setU_Block(false);
 			u.setU_Creation_Date(new Timestamp(new Date().getTime()));
 			
-			Resource r = new ClassPathResource("beans.xml");
-			BeanFactory factory = new XmlBeanFactory(r);
-			User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
+		
 			
 			sdao.saveUser(u);
 			request.getRequestDispatcher("login.jsp").include(request, response);
@@ -63,9 +64,7 @@ public class User_masterController extends HttpServlet {
 		{
 				String email = request.getParameter("email");
 				String password = request.getParameter("password");
-				Resource r = new ClassPathResource("beans.xml");
-				BeanFactory factory = new XmlBeanFactory(r);
-				User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
+				
 				user_master user = sdao.Check_Login(email, password);
 				if(user!=null)
 				{
@@ -94,9 +93,7 @@ public class User_masterController extends HttpServlet {
 			u.setU_Pincode(Integer.parseInt(request.getParameter("pincode")));
 			u.setU_Type("user");
 			
-			Resource r = new ClassPathResource("beans.xml");
-			BeanFactory factory = new XmlBeanFactory(r);
-			User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
+			
 			
 			sdao.updateUser(u);
 			HttpSession session=request.getSession();
@@ -104,7 +101,23 @@ public class User_masterController extends HttpServlet {
 			response.sendRedirect("Viewprofile.jsp");
 			
 		}
-
+		else if(action.equalsIgnoreCase("Send OTP"))
+		{
+			String email= request.getParameter("email");
+			
+			String msg= sdao.sendotp(email);
+			
+			if(msg.equalsIgnoreCase("OTP not send")||msg.equalsIgnoreCase("Email is not valid"))
+			{
+				HttpSession session = request.getSession();
+				session.setAttribute("error",msg);
+				request.getRequestDispatcher("ForgetPassword.jsp").include(request, response);
+			}
+			else
+			{
+				
+			}
+		}
 	}
 }
 
