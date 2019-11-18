@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
+import com.goodreads.bin.ForgotPassword;
 import com.goodreads.bin.user_master;
 import com.goodreads.dao.User_masterDao;
 
@@ -25,5 +26,9 @@ public interface User_masterService {
 	public user_master Check_Login(String U_Email,String U_Password);
 	
 	public void Update_Block_Status(int U_Id,boolean status);
+
+	String sendotp(String email);
+
+	ForgotPassword fetchEmailData(String email);
 	
 }
