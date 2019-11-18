@@ -97,6 +97,7 @@ input,
 select {
   -webkit-appearance: none;
   outline: none;
+  align-self: 
 }
 
 button,
