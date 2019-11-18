@@ -1,39 +1,39 @@
 <%@page import="com.goodreads.bin.user_master"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-  
+
   <%
-  	response.setHeader("Cache-Control", "no-cache");
+  
+  response.setHeader("Cache-Control", "no-cache");
 	response.setHeader("Cache-Control", "no-store");
 	response.setHeader("Pragma", "no-cache");
 	response.setDateHeader("Expires", 0);
-	
-	/* 
- 	 user_master user = null;
+  user_master user = null;
     		if(session!=null)
     		{
     			if(session.getAttribute("user")!=null)
     			{
-    				user = (user_master)session.getAttribute("user");		
+    				user=(user_master) session.getAttribute("user");
     			}
     			else
     			{
+
     				response.sendRedirect("login.jsp");
     			}
+    			
     		}
     		else
     		{
-    			response.sendRedirect("login.jsp");
-    		} */
+
+				response.sendRedirect("login.jsp");
+    		}
+    		
   
   %>
-  <body>
-    <div class="page">
+ <jsp:include page="header.jsp"></jsp:include>
+ 
+ 
         <div class="content-inner">
-        
-      <jsp:include page="header.jsp"></jsp:include>
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
@@ -143,7 +143,7 @@
                 <div class="row bg-white has-shadow">
                   <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
                     <div class="project-title d-flex align-items-center">
-                      <div class="image has-shadow"><img src=" img/project-1.jpg" alt="..." class="img-fluid"></div>
+                      <div class="image has-shadow"><img src=" ./img/project-1.jpg" alt="..." class="img-fluid"></div>
                       <div class="text">
                         <h3 class="h4">Project Title</h3><small>Lorem Ipsum Dolor</small>
                       </div>
@@ -166,7 +166,7 @@
                 <div class="row bg-white has-shadow">
                   <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
                     <div class="project-title d-flex align-items-center">
-                      <div class="image has-shadow"><img src=" img/project-2.jpg" alt="..." class="img-fluid"></div>
+                      <div class="image has-shadow"><img src=" ./img/project-2.jpg" alt="..." class="img-fluid"></div>
                       <div class="text">
                         <h3 class="h4">Project Title</h3><small>Lorem Ipsum Dolor</small>
                       </div>
@@ -189,7 +189,7 @@
                 <div class="row bg-white has-shadow">
                   <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
                     <div class="project-title d-flex align-items-center">
-                      <div class="image has-shadow"><img src=" img/project-3.jpg" alt="..." class="img-fluid"></div>
+                      <div class="image has-shadow"><img src="./img/project-3.jpg" alt="..." class="img-fluid"></div>
                       <div class="text">
                         <h3 class="h4">Project Title</h3><small>Lorem Ipsum Dolor</small>
                       </div>
@@ -212,7 +212,7 @@
                 <div class="row bg-white has-shadow">
                   <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
                     <div class="project-title d-flex align-items-center">
-                      <div class="image has-shadow"><img src=" img/project-4.jpg" alt="..." class="img-fluid"></div>
+                      <div class="image has-shadow"><img src=" ./img/project-4.jpg" alt="..." class="img-fluid"></div>
                       <div class="text">
                         <h3 class="h4">Project Title</h3><small>Lorem Ipsum Dolor</small>
                       </div>
@@ -264,7 +264,7 @@
                       </div>
                     </div>
                     <div class="card-body text-center">
-                      <div class="client-avatar"><img src=" img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle">
+                      <div class="client-avatar"><img src="./img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle">
                         <div class="status bg-green"></div>
                       </div>
                       <div class="client-title">
@@ -321,27 +321,27 @@
                     </div>
                     <div class="card-body no-padding">
                       <div class="item d-flex align-items-center">
-                        <div class="image"><img src=" img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="image"><img src=" ./img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
                         <div class="text"><a href="#">
                             <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Aria Smith.   </small></div>
                       </div>
                       <div class="item d-flex align-items-center">
-                        <div class="image"><img src=" img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="image"><img src=" ./img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
                         <div class="text"><a href="#">
                             <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Frank Williams.   </small></div>
                       </div>
                       <div class="item d-flex align-items-center">
-                        <div class="image"><img src=" img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="image"><img src=" ./img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
                         <div class="text"><a href="#">
                             <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Ashley Wood.   </small></div>
                       </div>
                       <div class="item d-flex align-items-center">
-                        <div class="image"><img src=" img/avatar-4.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="image"><img src=" ./img/avatar-4.jpg" alt="..." class="img-fluid rounded-circle"></div>
                         <div class="text"><a href="#">
                             <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Jason Doe.   </small></div>
                       </div>
                       <div class="item d-flex align-items-center">
-                        <div class="image"><img src=" img/avatar-5.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="image"><img src=" ./img/avatar-5.jpg" alt="..." class="img-fluid rounded-circle"></div>
                         <div class="text"><a href="#">
                             <h3 class="h5">Lorem Ipsum Dolor</h3></a><small>Posted on 5th June 2017 by Sam Martinez.   </small></div>
                       </div>
@@ -482,7 +482,7 @@
                       <!-- Item-->
                       <div class="item">
                         <div class="feed d-flex justify-content-between">
-                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src=" img/avatar-5.jpg" alt="person" class="img-fluid rounded-circle"></a>
+                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src=" ./img/avatar-5.jpg" alt="person" class="img-fluid rounded-circle"></a>
                             <div class="content">
                               <h5>Aria Smith</h5><span>Posted a new blog </span>
                               <div class="full-date"><small>Today 5:60 pm - 12.06.2014</small></div>
@@ -494,7 +494,7 @@
                       <!-- Item-->
                       <div class="item"> 
                         <div class="feed d-flex justify-content-between">
-                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src=" img/avatar-2.jpg" alt="person" class="img-fluid rounded-circle"></a>
+                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src=" ./img/avatar-2.jpg" alt="person" class="img-fluid rounded-circle"></a>
                             <div class="content">
                               <h5>Frank Williams</h5><span>Posted a new blog </span>
                               <div class="full-date"><small>Today 5:60 pm - 12.06.2014</small></div>
@@ -507,7 +507,7 @@
                       <!-- Item-->
                       <div class="item clearfix">
                         <div class="feed d-flex justify-content-between">
-                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src=" img/avatar-3.jpg" alt="person" class="img-fluid rounded-circle"></a>
+                          <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src=" ./img/avatar-3.jpg" alt="person" class="img-fluid rounded-circle"></a>
                             <div class="content">
                               <h5>Ashley Wood</h5><span>Posted a new blog </span>
                               <div class="full-date"><small>Today 5:60 pm - 12.06.2014</small></div>
@@ -576,27 +576,5 @@
               </div>
             </div>
           </section>
-			<jsp:include page="footer.jsp"></jsp:include>          
-        </div>
-      </div>
-    </div>
-    <button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button" class="btn btn-primary btn-sm d-none d-md-inline-block"><i class="fa fa-cog fa-2x"></i></button>
-    <div id="style-switch" class="collapse">
-      <h5 class="mb-3">Select theme colour</h5>
-      <form class="mb-3">
-        <select name="colour" id="colour" class="form-control">
-          <option value="">select colour variant</option>
-          <option value="default.premium">violet</option>
-          <option value="red.premium">red</option>
-          <option value="green.premium">green</option>
-          <option value="pink.premium">pink</option>
-          <option value="sea.premium">sea</option>
-          <option value="blue.premium">blue</option>
-        </select>
-      </form>
-      <p><img src=" img/template-mac.png" alt="" class="img-fluid"></p>
-      <p class="text-muted text-small">Stylesheet switching is done via JavaScript and can cause a blink while page loads. This will not happen in your production code.</p>
-    </div>
-   
-  </body>
-</html>
+          <!-- Page Footer-->
+    <jsp:include page="footer.jsp"></jsp:include>

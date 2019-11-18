@@ -1,33 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
 <html>
+  
+<!-- Mirrored from demo.bootstrapious.com/admin-premium/1-4-5/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Nov 2019 02:04:47 GMT -->
 <head>
-
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Bootstrap Material Admin by Bootstrapious.com</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href=" vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href=" vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./vendor/font-awesome/css/font-awesome.min.css">
     <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href=" css/fontastic.css">
+    <link rel="stylesheet" href=" ./css/fontastic.css">
     <!-- Google fonts - Poppins -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href=" css/style.default.premium.css" id="theme-stylesheet">
+    <link rel="stylesheet" href=" ./css/style.default.premium.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href=" css/custom.css">
+    <link rel="stylesheet" href=" ./css/custom.css">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img/favicon.ico">
- 
-</head>
-<body>
-<!-- Main Navbar-->
+    <link rel="shortcut icon" href=" img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div class="page">
+      <!-- Main Navbar-->
       <header class="header">
         <nav class="navbar">
           <!-- Search Box-->
@@ -80,17 +83,17 @@
                 <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange badge-corner">10</span></a>
                   <ul aria-labelledby="notifications" class="dropdown-menu">
                     <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src=" img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-profile"> <img src=" ./img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
                         <div class="msg-body">
                           <h3 class="h5">Jason Doe</h3><span>Sent You Message</span>
                         </div></a></li>
                     <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src=" img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-profile"> <img src=" ./img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
                         <div class="msg-body">
                           <h3 class="h5">Frank Williams</h3><span>Sent You Message</span>
                         </div></a></li>
                     <li><a rel="nofollow" href="#" class="dropdown-item d-flex"> 
-                        <div class="msg-profile"> <img src=" img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                        <div class="msg-profile"> <img src=" ./img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
                         <div class="msg-body">
                           <h3 class="h5">Ashley Wood</h3><span>Sent You Message</span>
                         </div></a></li>
@@ -116,7 +119,7 @@
         <nav class="side-navbar">
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center"><a href="pages-profile.html">
-              <div class="avatar"><img src=" img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div></a>
+              <div class="avatar"><img src=" ./img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div></a>
             <div class="title">
               <h1 class="h4">Mark Stephen</h1>
               <p>Web Designer</p>
@@ -124,7 +127,7 @@
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
           <ul class="list-unstyled">
-            <li class="active"><a href="index.jsp"> <i class="icon-home"></i>Home </a></li>
+            <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
             <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Tables </a>
               <ul id="tablesDropdown" class="collapse list-unstyled ">
                 <li><a href="tables.html">Bootstrap tables</a></li>
@@ -137,6 +140,14 @@
                 <li><a href="charts-gauge-sparkline.html">Gauge + Sparkline</a></li>
               </ul>
             </li>
+            
+            <li><a href="#adminDropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-users"></i>Users </a>
+              <ul id="adminDropdown" class="collapse list-unstyled ">
+                <li><a href="addadmin.jsp">Add Admin</a></li>
+                <li><a href="showallusers.jsp">Show All Users</a></li>
+              </ul>
+            </li>
+            
             <li><a href="#formsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Forms </a>
               <ul id="formsDropdown" class="collapse list-unstyled ">
                 <li><a href="forms.html">Basic forms</a></li>
@@ -176,4 +187,4 @@
             <li> <a href="#"> <i class="icon-picture"></i>Demo </a></li>
           </ul>
         </nav>
-      
+    

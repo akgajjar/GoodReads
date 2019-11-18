@@ -60,6 +60,7 @@
                     <h1>GoodReads</h1>
                   </div>
                   <p>Description.</p>
+                  
                 </div>
               </div>
             </div>
@@ -68,6 +69,18 @@
               <div class="form d-flex align-items-center">
                 <div class="content">
                   <form method="post" class="form-validate" action="../user_masterAdminController">
+                    <%
+                    if(session.getAttribute("error")!=null)
+                    {
+                    	String error = (String) session.getAttribute("error");
+                    	%>
+                   		 <div class="form-group">
+                      <label for="login-username" class="label-material" id="error"><%=error %></label>
+                    </div>
+                    	
+                    	<%
+                    }
+                    %>
                     <div class="form-group">
                       <input id="login-username" type="text" name="email" required data-msg="Please enter your username" class="input-material">
                       <label for="login-username" class="label-material">Email Id</label>

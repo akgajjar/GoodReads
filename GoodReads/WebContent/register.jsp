@@ -90,7 +90,8 @@
 											<input type="text" name="lname" placeholder="Lastname" required="">
 										</div>
 										<div class="form-input editContent" style="outline: none; outline-offset: -2px; cursor: inherit;">
-											<input type="email" name="mobile" placeholder="Mobile no" required="">
+											<input type="text" name="mobile" placeholder="Mobile no" required="">
+											
 										</div><div class="form-input editContent" style="outline: none; cursor: inherit;">
 											<input type="email" name="email" placeholder="Email" required="">
 										</div>
@@ -115,6 +116,14 @@
 										<div class="form-input editContent" style="outline: none; cursor: inherit;">
 											<input type="password" name="cpassword" placeholder="Confirm Password" required="">
 										</div>
+										<div class="form-input editContent" style="outline: none; outline-offset: -2px; cursor: inherit; ">
+												<select name="Gender">
+		<option value="Gender">Gender	</option>
+		<option value="male">Male</option>
+		<option value="female">Female</option>
+		<option value="other">Others</option>
+	</select>
+											</div>
 
 										<div class="form-input editContent" style="outline: none; cursor: inherit;">
 										
