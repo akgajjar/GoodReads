@@ -78,7 +78,7 @@
 								<p></p>
 							</div>
 							<div class="form-right-inf editContent" style="outline: none; cursor: inherit;">
-								<form action="registration_controller" method="post" class="signin-form">
+								<form action="User_masterController" method="post" class="signin-form">
 									<div class="forms-gds editContent" style="outline: none; cursor: inherit;">
 										<div class="form-input editContent" style="outline: none; cursor: inherit;">
 											<input type="email" name="email" placeholder="Email" required="">
@@ -86,7 +86,7 @@
 										<div class="form-input editContent" style="outline: none; cursor: inherit;">
 											<input type="password" name="password" placeholder="Password" required="">
 										</div>
-										<div class="form-input editContent" style="outline: none; cursor: inherit;"><button name="login" class="btn" style="outline: none; cursor: inherit;">Login</button></div>
+										<div class="form-input editContent" style="outline: none; cursor: inherit;"><input type="submit" class="btn btn-primary" name="action" id="action" style="outline: none; cursor: inherit; background-color: red;border: red" value="Signin"></div>
 									</div>
 									<h6 class="already editContent" style="outline: none; cursor: inherit;"> Dont have an account? <a href="register.jsp"><span class="editContent" style="outline: none; cursor: inherit;">Register Here<span></span></span></a></h6>
 								</form>

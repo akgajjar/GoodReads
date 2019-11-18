@@ -59,7 +59,7 @@ public class User_masterController extends HttpServlet {
 
 
 	}
-		else if(action.equalsIgnoreCase("Login"))
+		else if(action.equalsIgnoreCase("Signin"))
 		{
 				String email = request.getParameter("email");
 				String password = request.getParameter("password");
