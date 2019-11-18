@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.orm.hibernate3.HibernateTemplate;
 
+import com.goodreads.bin.ForgotPassword;
 import com.goodreads.bin.user_master;
 import com.goodreads.dao.User_masterDao;
 
@@ -58,4 +59,20 @@ public class User_masterDaoImpl implements User_masterDao {
 		updateUser(u);
 	}
 	
+	@Override
+	public ForgotPassword fetchEmailData(String email) {
+		ForgotPassword fpass=null;
+		Object[] params  = {email};
+		List<user_master> l= template.find("select u from user_master u where u.U_Email=? ", params);
+		if(l.size()>0) {
+			fpass=new ForgotPassword();
+			
+			fpass.setEmail(email);
+			fpass.setId(l.get(0).getU_Id());
+			fpass.setName(l.get(0).getU_Fname()+" "+l.get(0).getU_Mname()+" "+l.get(0).getU_Lname());
+			
+		}
+			return fpass;
+		
+	}
 }
