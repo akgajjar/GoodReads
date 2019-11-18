@@ -27,8 +27,14 @@ public interface User_masterService {
 	
 	public void Update_Block_Status(int U_Id,boolean status);
 
-	String sendotp(String email);
+	public String sendotp(String email);
 
-	ForgotPassword fetchEmailData(String email);
+	public ForgotPassword fetchEmailData(String email);
+
+	public user_master getByEmailId(String email);
+
+	public void UpdatePassword(String email, String password);
+	
+	
 	
 }

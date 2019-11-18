@@ -40,7 +40,7 @@
     		{
     			if(session.getAttribute("user")!=null)
     			{
-    				response.sendRedirect("admin/index.jsp");
+    				response.sendRedirect("index.jsp");
     			}
     			
     		}
@@ -83,14 +83,11 @@
                     }
                     %>
                     <div class="form-group">
-                      <input id="login-username" type="text" name="email" required data-msg="Please enter your Email Id" class="input-material">
-                      <label for="login-username" class="label-material">Email Id</label>
+                      <input id="login-username" type="text" name="otp" required data-msg="Please enter your Otp" class="input-material">
+                      <label for="login-username" class="label-material">Otp</label>
                     </div>
-                    <div class="form-group">
-                      <input id="login-password" type="password" name="password" required data-msg="Please enter your password" class="input-material">
-                      <label for="login-password" class="label-material">Password</label>
-                    </div><input type="submit" id="login" name="action" class="btn btn-primary" value="Login">
-                  </form><a href="forgotpassword.jsp" class="forgot-pass">Forgot Password?</a>
+                    <input type="submit" id="enterotp" name="action" class="btn btn-primary" value="Confirm Otp">
+                  </form>
                 </div>
               </div>
             </div>

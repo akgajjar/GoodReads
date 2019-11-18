@@ -1,7 +1,9 @@
 
+<%@page import="com.goodreads.bin.ForgotPassword"%>
 <%@page import="com.goodreads.bin.user_master"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
   
@@ -27,10 +29,12 @@
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon.ico">
  </head>
-  <body>
-  
+  <body><%-- 
+  <c:if test="${empty OtpMatch }">
+<c:redirect url="forgotpassword.jsp"/>
+</c:if> --%>
   <%
-  
+  if(session.getAttribute("OtpMatch") == null)
   response.setHeader("Cache-Control", "no-cache");
 	response.setHeader("Cache-Control", "no-store");
 	response.setHeader("Pragma", "no-cache");
@@ -40,13 +44,26 @@
     		{
     			if(session.getAttribute("user")!=null)
     			{
-    				response.sendRedirect("admin/index.jsp");
+    				response.sendRedirect("index.jsp");
     			}
     			
     		}
     		
   
   %>
+  
+  <%
+
+	response.setHeader("Cache-Control", "no-cache");
+	response.setHeader("Cache-Control", "no-store");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
+	session.removeAttribute("otp");
+	ForgotPassword fpass=(ForgotPassword)session.getAttribute("FpassData");
+	String email = fpass.getEmail();
+	session.invalidate(); 
+%>
+  
   
     <div class="page login-page">
       <div class="container d-flex align-items-center">
@@ -69,28 +86,20 @@
               <div class="form d-flex align-items-center">
                 <div class="content">
                   <form method="post" class="form-validate" action="../user_masterAdminController">
-                    <%
-                    if(session.getAttribute("error")!=null)
-                    {
-                    	String error = (String) session.getAttribute("error");
-                    	session.removeAttribute("error");
-                    	%>
-                   		 <div class="form-group">
-                      <label for="login-username" class="label-material" id="error"><%=error %></label>
-                    </div>
-                    	
-                    	<%
-                    }
-                    %>
+                  
+                    
+                    <input type="hidden" name="email" value="<%=email%>">
                     <div class="form-group">
-                      <input id="login-username" type="text" name="email" required data-msg="Please enter your Email Id" class="input-material">
-                      <label for="login-username" class="label-material">Email Id</label>
+                      <input id="login-password" type="password" name="newpassword" required data-msg="Please enter New password" class="input-material">
+                      <label for="login-password" class="label-material">New Password</label>
                     </div>
                     <div class="form-group">
-                      <input id="login-password" type="password" name="password" required data-msg="Please enter your password" class="input-material">
-                      <label for="login-password" class="label-material">Password</label>
-                    </div><input type="submit" id="login" name="action" class="btn btn-primary" value="Login">
-                  </form><a href="forgotpassword.jsp" class="forgot-pass">Forgot Password?</a>
+                      <input id="login-password" type="password" name="confirmpassword" required data-msg="Please enter Confirm password" class="input-material">
+                      <label for="login-password" class="label-material">Confirm Password</label>
+                    </div>
+                    
+                    <input type="submit" id="login" name="action" class="btn btn-primary" value="Recover Password">
+                  </form>
                 </div>
               </div>
             </div>

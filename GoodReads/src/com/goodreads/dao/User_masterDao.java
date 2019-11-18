@@ -25,6 +25,8 @@ public interface User_masterDao {
 	
 	public void Update_Block_Status(int U_Id,boolean status);
 
-	ForgotPassword fetchEmailData(String email);
+	public ForgotPassword fetchEmailData(String email);
+
+	public user_master getByEmailId(String email);
 	
 }

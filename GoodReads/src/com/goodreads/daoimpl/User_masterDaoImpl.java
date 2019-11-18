@@ -75,4 +75,15 @@ public class User_masterDaoImpl implements User_masterDao {
 			return fpass;
 		
 	}
+	@Override
+	public user_master getByEmailId(String email) {
+		
+		Object[] params  = {email};
+		List<user_master> l= template.find("select u from user_master u where u.U_Email=? ", params);
+		if(l.size()>0) {
+			return l.get(0);
+		}
+			return null;
+		
+	}
 }

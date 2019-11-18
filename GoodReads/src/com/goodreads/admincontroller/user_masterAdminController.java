@@ -26,6 +26,10 @@ public class user_masterAdminController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		Resource r = new ClassPathResource("beans.xml");
+		BeanFactory factory = new XmlBeanFactory(r);
+		User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
+
 		response.setContentType("text/html");
 		String action = request.getParameter("action");
 
@@ -34,10 +38,7 @@ public class user_masterAdminController extends HttpServlet {
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
 
-			Resource r = new ClassPathResource("beans.xml");
-			BeanFactory factory = new XmlBeanFactory(r);
-			User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
-
+		
 			user_master user = sdao.Check_Login(email, password);
 			
 			HttpSession session = request.getSession();
@@ -73,13 +74,59 @@ public class user_masterAdminController extends HttpServlet {
 			u.setU_Block(false);
 			u.setU_Creation_Date(new Timestamp(new Date().getTime()));
 			
-			Resource r = new ClassPathResource("beans.xml");
-			BeanFactory factory = new XmlBeanFactory(r);
-			User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
 			
 			sdao.saveUser(u);
 			response.sendRedirect("admin/index.jsp");
 
+		}
+		else if(action.equalsIgnoreCase("Send Otp"))
+		{
+			String email  = request.getParameter("email");
+			
+			String msg = sdao.sendotp(email);
+			
+			if(msg.equalsIgnoreCase("Otp Not Send")||msg.equalsIgnoreCase("Email Address Not Valid"))
+			{
+				HttpSession session = request.getSession();
+				session.setAttribute("error", msg);
+				response.sendRedirect("admin/forgotpassword.jsp");
+			}
+			else
+			{
+				
+				HttpSession otpsession = request.getSession();
+				otpsession.setAttribute("otp", msg);
+
+				otpsession.setMaxInactiveInterval(10 * 60);  // Set OTP valid time.
+				otpsession.setAttribute("FpassData", sdao.fetchEmailData(email)); //  user Email adress For sending OTP
+				response.sendRedirect("admin/otpdata.jsp");
+			}
+			
+		}
+		else if(action.equalsIgnoreCase("Confirm Otp"))
+		{
+			HttpSession session=request.getSession(false);
+			String Generatedotp=String.valueOf(session.getAttribute("otp"));
+			String enterOtp=request.getParameter("otp");
+			if(Generatedotp.equalsIgnoreCase(enterOtp))
+			{
+				request.setAttribute("OtpMatch", "Match");
+				response.sendRedirect("admin/recoverpassword.jsp");
+			}
+			else
+			{
+				request.setAttribute("error", "OTP Not Match");
+				response.sendRedirect("admin/otpdata.jsp");
+			}
+			
+		}
+		else if(action.equalsIgnoreCase("Recover Password"))
+		{
+			String pass=request.getParameter("newpassword");
+			String email=request.getParameter("email");
+			
+			sdao.UpdatePassword(email, pass);
+			response.sendRedirect("admin/login.jsp");
 		}
 		
 	}

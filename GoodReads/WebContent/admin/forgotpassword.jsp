@@ -73,11 +73,12 @@
                     if(session.getAttribute("error")!=null)
                     {
                     	String error = (String) session.getAttribute("error");
+                    	
+                    	session.removeAttribute("error");
                     	%>
                    		 <div class="form-group">
                       <label for="login-username" class="label-material" id="error"><%=error %></label>
                     </div>
-                    	
                     	<%
                     }
                     %>
