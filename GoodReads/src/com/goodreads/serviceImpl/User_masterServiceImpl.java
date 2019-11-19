@@ -109,11 +109,13 @@ public class User_masterServiceImpl implements User_masterService {
 						+ "  is your One Time Password.Do NOT share this code with anyone for security reasons.this is valid for 10 minutes.</p><div></center></body></html>";
 
 				message.setContent(msg1, "text/html; charset=utf-8");
+
 				Transport.send(message);
 
 				return String.valueOf(otp);
 
 			} catch (Exception e) {
+				e.printStackTrace();
 				return "Otp Not Send";
 			}
 
@@ -126,4 +128,16 @@ public class User_masterServiceImpl implements User_masterService {
 		return udao.fetchEmailData(email);
 	}
 
+	@Override
+	public user_master getByEmailId(String email) {
+		return udao.getByEmailId(email);
+	}
+	
+	@Override
+	public void UpdatePassword(String email,String password) {
+		user_master u = getByEmailId(email);
+		u.setU_Password(password);
+		udao.updateUser(u);
+	}
+	
 }
