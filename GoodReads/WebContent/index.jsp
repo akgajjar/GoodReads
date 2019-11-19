@@ -43,7 +43,7 @@
                         <ul class="menu mt-2">
                             <li class="active"><a href="index.html" style="color: rgb(0, 0, 0); font-weight: 700; text-transform: uppercase; outline: none; cursor: inherit;">HOME</a></li>
                             <li><a href="about.html" style="outline: none; cursor: inherit;">About</a></li>
-                            <li><a href="blog.html" style="outline: none; cursor: inherit;">Blog</a></li>
+                            <li><a href="profile.jsp" style="outline: none; cursor: inherit;">Profile</a></li>
                             <li>
                                 <!-- First Tier Drop Down -->
                                 <label for="drop-2" class="toggle">Drop Down <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span> </label>
@@ -56,7 +56,26 @@
                                 </ul>
                             </li>
                             <li><a href="contact.html" style="outline: none; cursor: inherit;">Contact</a></li>
+                            
+                            
+                            <%
+							
+							if(session.getAttribute("user")==null) { 
+								%>
+
+                            
+                            
+                            
                             <li><a href="login.jsp" style="outline: none; cursor: inherit;">Login</a></li>
+                            <%}
+                            %>
+                            else
+							<% {%>
+							
+								
+								 <li><a href="#" style="outline: none; cursor: inherit;">Logout</a></li>
+							<% }%>
+                            
                             <li><a href="admin/login.jsp" style="outline: none; cursor: inherit;">Admin Login</a></li>
                         </ul>
                     </nav>

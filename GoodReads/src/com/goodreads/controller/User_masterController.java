@@ -115,8 +115,13 @@ public class User_masterController extends HttpServlet {
 			}
 			else
 			{
-				
-			}
+				int otp=Integer.parseInt(msg);
+				HttpSession otpsession= request.getSession();
+				otpsession.setAttribute("otp",otp);
+				otpsession.setMaxInactiveInterval(10 * 60);
+				otpsession.setAttribute("FpassData", sdao.fetchEmailData(email));
+				request.getRequestDispatcher("ChangePassword.jsp").include(request, response);
+				}
 		}
 	}
 }
