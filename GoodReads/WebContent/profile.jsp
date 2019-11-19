@@ -124,7 +124,7 @@
 						</label>
 					</div>
 
-					<!-- start country -->
+					<!-- <!-- start country -->
 					<div class="main-row">
 						<label class="input select">
 							<select name="country">
@@ -139,8 +139,8 @@
 							<i></i>
 						</label>
 					</div>
-					<!-- end country -->
-					<!-- start position -->
+					end country -->
+				<!-- 	<!-- start position -->
 					<div class="main-row">
 						<label class="input select">
 							<select name="position">
@@ -152,7 +152,7 @@
 							<i></i>
 						</label>
 					</div>
-					<!-- end position -->
+					end position -->
 					<!-- start city post code -->
 					<div class="first-line agileits">
 						<div class="span8 main-row">
