@@ -78,9 +78,10 @@ public class User_masterController extends HttpServlet {
 					request.getRequestDispatcher("login.jsp").include(request, response);
 				}
 			}
-		else if(action.equalsIgnoreCase("update"))
+		else if(action.equalsIgnoreCase("Update"))
 		{
 			user_master u=new user_master();
+			u.setU_Id(Integer.parseInt(request.getParameter("uid")));
 			u.setU_Fname(request.getParameter("fname"));
 			u.setU_Mname(request.getParameter("mname"));
 			u.setU_Lname(request.getParameter("lname"));
@@ -91,14 +92,14 @@ public class User_masterController extends HttpServlet {
 			u.setU_city(request.getParameter("city"));
 			u.setU_State(request.getParameter("state"));
 			u.setU_Pincode(Integer.parseInt(request.getParameter("pincode")));
-			u.setU_Type("user");
+			u.setU_Gender(request.getParameter("gender"));
 			
-			
+			System.out.println("Error");
 			
 			sdao.updateUser(u);
 			HttpSession session=request.getSession();
 			session.setAttribute("user",u);
-			response.sendRedirect("Viewprofile.jsp");
+			response.sendRedirect("profile.jsp");
 			
 		}
 		else if(action.equalsIgnoreCase("Send OTP"))
@@ -120,10 +121,36 @@ public class User_masterController extends HttpServlet {
 				otpsession.setAttribute("otp",otp);
 				otpsession.setMaxInactiveInterval(10 * 60);
 				otpsession.setAttribute("FpassData", sdao.fetchEmailData(email));
-				request.getRequestDispatcher("ChangePassword.jsp").include(request, response);
+				request.getRequestDispatcher("sendotp.jsp").include(request, response);
 				}
 		}
+		else if(action.equalsIgnoreCase("Confirm Otp"))
+		{
+			HttpSession session=request.getSession(false);
+			String Generatedotp=String.valueOf(session.getAttribute("otp"));
+			String enterOtp=request.getParameter("otp");
+			if(Generatedotp.equalsIgnoreCase(enterOtp))
+			{
+				request.setAttribute("OtpMatch", "Match");
+				response.sendRedirect("ChangePassword.jsp");
+			}
+			else
+			{
+				request.setAttribute("error", "OTP Not Match");
+				response.sendRedirect("sendotp.jsp");
+			}
+			
+		}
+		else if(action.equalsIgnoreCase("Change Password"))
+		{
+			String pass=request.getParameter("newpassword");
+			String email=request.getParameter("email");
+			sdao.UpdatePassword(email, pass);
+			response.sendRedirect("index.jsp");
+		}
+		
 	}
+
 }
 
 	

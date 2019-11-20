@@ -1,3 +1,5 @@
+<%@page import="com.goodreads.bin.ForgotPassword"%>
+<%@page import="com.goodreads.bin.user_master"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -29,7 +31,6 @@
     <!-- //Fonts -->
 	
 </head>
-
 <body>
 <%
   
@@ -49,37 +50,24 @@
     		
   
   %>
-  
-	<!-- page -->
-	<div id="page" class="page">
-	
-	<section class="form-26">
-	 <div>
-        <%@include file="header.jsp" %>
-        </div>
-			<div class="form-26-mian bg bg1" style="background-color: rgba(0, 0, 0, 0); margin-top: 0px; background-image: url(&quot;loginimages/411522.jpg&quot;);">
+<div class="form-26-mian bg bg1" style="background-color: rgba(0, 0, 0, 0); margin-top: 0px; background-image: url(&quot;loginimages/411522.jpg&quot;);">
 				<div class="layer">
 					<div class="wrapper">
 						<div class="form-inner-cont editContent">
 							<div class="forms-26-info">
-								<h2 class="editContent" style="outline: none; cursor: inherit;">Login</h2>
+								<h2 class="editContent" style="outline: none; cursor: inherit;">Change Password</h2>
 								<p></p>
 							</div>
 							<div class="form-right-inf editContent" style="outline: none; cursor: inherit;">
 								<form action="User_masterController" method="post" class="signin-form">
 									<div class="forms-gds editContent" style="outline: none; cursor: inherit;">
 										<div class="form-input editContent" style="outline: none; cursor: inherit;">
-											<input type="email" name="email" placeholder="Email" required="">
+											<input type="text" name="otp" placeholder="OTP" required="">
 										</div>
-										<div class="form-input editContent" style="outline: none; cursor: inherit;">
-											<input type="password" name="password" placeholder="Password" required="">
-										</div>
-										<div class="form-input editContent" style="outline: none; cursor: inherit;"><input type="submit" class="btn btn-primary" name="action" id="action" style="outline: none; cursor: inherit; background-color: red;border: red" value="Signin"></div>
+										
+									<div class="form-input editContent" style="outline: none; cursor: inherit;"><input type="submit" id="enterotp" class="btn btn-primary" name="action" id="action" style="outline: none; cursor: inherit; background-color: red;border: red" value="Confirm Otp"></div>
 									</div>
-										<h6 class="already editContent" style="outline: none; cursor: inherit;"> <a href="ForgetPassword.jsp"><span class="editContent" style="outline: none; cursor: inherit;">Forgot Password? </a></h6>
-								
-									<h6 class="already editContent" style="outline: none; cursor: inherit;"> Dont have an account? <a href="register.jsp"><span class="editContent" style="outline: none; cursor: inherit;">Register Here<span></span></span></a></h6>
-								</form>
+										</form>
 
 							</div>
 							<div class="copyright text-center">
@@ -92,6 +80,7 @@
 			</div>
 		</section>
 		<!-- //form-26-section --></div><!-- /#page -->
+
 
 
 </body>

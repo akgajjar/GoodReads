@@ -24,53 +24,59 @@
     <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
     <!-- //Fonts -->
+    <style type="text/css">
+   #imageUpload
+{
+    display: none;
+}
+
+#profileImage
+{
+    cursor: pointer;
+}
+
+#profile-container {
+
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  
+    
+   
+}
+
+#profile-container img {
+	
+    width: 150px;
+    height: 150px;
+}
+    </style>
+    
 </head>
 <body>
-
-  <!-- header -->
-            <header class="header">
-                <div class="container-fluid px-lg-5">
-                    <!-- nav -->
-                    <nav class="py-4">
-                        <div id="logo">
-                            <h1> <a href="index.html" class="editContent" style="color: rgb(204, 0, 0); font-size: 40px; background-color: rgba(0, 0, 0, 0); font-family: &quot;Source Sans Pro&quot;, sans-serif; outline: none; outline-offset: -2px; cursor: inherit;" src="bundles/best1.gif">Goodreads</a></h1>
-                        </div>
-
-                        <label for="drop" class="toggle">Menu</label>
-                        <input type="checkbox" id="drop">
-                        <ul class="menu mt-2">
-                            <li class="active"><a href="index.html" style="color: rgb(0, 0, 0); font-weight: 700; text-transform: uppercase; outline: none; cursor: inherit;">HOME</a></li>
-                            <li><a href="about.html" style="outline: none; cursor: inherit;">About</a></li>
-                            <li><a href="blog.html" style="outline: none; cursor: inherit;">Blog</a></li>
-                            <li>
-                                <!-- First Tier Drop Down -->
-                                <label for="drop-2" class="toggle">Drop Down <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span> </label>
-                                <a href="#" style="outline: none; cursor: inherit;">Drop Down <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span></a>
-                                <input type="checkbox" id="drop-2">
-                                <ul>
-                                    <li><a href="blog.html" style="outline: none; cursor: inherit;">Blog</a></li>
-                                    <li><a href="shop.html" style="outline: none; cursor: inherit;">Shop Now</a></li>
-                                    <li><a href="shop-single.html" style="outline: none; cursor: inherit;">Single Page</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html" style="outline: none; cursor: inherit;">Contact</a></li>
-                            <li><a href="login.jsp" style="outline: none; cursor: inherit;">Login</a></li>
-                            <li><a href="admin/login.jsp" style="outline: none; cursor: inherit;">Admin Login</a></li>
-                        </ul>
-                    </nav>
-                    <!-- //nav -->
-                </div>
-            </header>
-
+<div class="form-26-mian bg bg1" style="background-color: rgba(0, 0, 0, 0); margin-top: 0px; background-image: url(&quot;loginimages/411522.jpg&quot;); background-size: 150%;">
+			
+<div class="header">
+  <div >
+        <%@include file="header.jsp" %>
+        </div>
+</div>
 <div class="content">
 		
 		<div class="main w3l">
 		
-			<div class="im-g">
-				<img src="profileimages/img1.jpg" alt="">
-			</div>
-			
-			<form class="contact-forms wthree">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<div id="profile-container">
+   <image id="profileImage" src="http://lorempixel.com/100/100" />
+</div>
+<input id="imageUpload" type="file" 
+       name="profile_photo" placeholder="Photo" required="" capture>
+			<br>
+			<form class="contact-forms wthree" action="User_masterController" method="post">
 				<!-- end /.header-->
 
 					<!-- start name -->
@@ -78,113 +84,120 @@
 						<div class="span6 main-row">
 							<div class="input">
 								
-								<input type="text" id="first_name" name="fname" placeholder="First name" required="">
+									<%
+								user_master u=new user_master();
+							if(session.getAttribute("user")==null   ) 
+							{
+								response.sendRedirect("login.jsp");
+							}
+							else
+							{
+							u=(user_master)session.getAttribute("user");
+							%>
+							<input type="hidden" name="uid" value="<%=u.getU_Id()%>">
+								
+								<input type="text" id="first_name" name="fname" placeholder="First name" required="" value="<%=u.getU_Fname()%>">
 							</div>
 						</div>
 						<div class="span6 main-row">
 							<div class="input">
 								
-								<input type="text" id="last_name" name="mname" placeholder="Middle name" required="">
+								<input type="text" id="last_name" name="mname" placeholder="Middle name" required="" value="<%=u.getU_Mname()%>">
 								
 							</div>
 						</div>
 						<div class="span6 main-row">
 							<div class="input">
 								
-								<input type="text" id="last_name" name="lname" placeholder="Last name" required="">
+								<input type="text" id="last_name" name="lname" placeholder="Last name" required="" value="<%=u.getU_Lname()%>">
 								
 							</div>
 						</div>
+						<div class="span6 main-row">
+							<div class="input">
+								
+								<input type="email" placeholder="Email" id="email" name="email" required="" value="<%=u.getU_Email()%>">
+							</div>
+						</div>
+						<div class="span6 main-row">
+							<div class="input">
+								
+								<input type="text" placeholder="Phone" id="mobile" name="mobile" required="" value="<%=u.getU_Mobile()%>">
+							</div>
+						</div>
+							<div class="span6 main-row">
+							<div class="input">
+								
+								<input type="text" placeholder="Pincode" id="pincode" name="pincode" required="" value="<%=u.getU_Pincode()%>">
+							</div>
+						</div>
+						<div class="span6 main-row">
+							<div class="input">
+								
+							</div>
+						</div>
+						
 					</div>
 					<!-- end name -->
 
 					<!-- start email phone -->
 					<div class="first-line agileits">
-						<div class="span6 main-row">
-							<div class="input">
-								
-								<input type="email" placeholder="Email" id="email" name="email" required="">
-							</div>
-						</div>
-						<div class="span6 main-row">
-							<div class="input">
-								
-								<input type="text" placeholder="Phone" id="mobile" name="phone" required="">
-							</div>
+						
+						
+					</div>
+					<div class="main-row">
+						<div class="input">
+							
+							<input type="text" id="address" placeholder="Address1" name="add1" required="" value="<%=u.getU_Address1()%>">
 						</div>
 					</div>
-				<div class="main-row">
-						<label class="input select">
-							<select name="position">
-								<option value="none" selected disabled="">Gender</option>
-								<option value="male">Male</option>
-								<option value="female"> Female</option>
-							</select>
-							<i></i>
-						</label>
+					<div class="main-row">
+						<div class="input">
+							
+							<input type="text" id="address" placeholder="Address2" name="add2" required="" value="<%=u.getU_Address2()%>">
+						</div>
 					</div>
+				
 
-					<!-- <!-- start country -->
-					<div class="main-row">
-						<label class="input select">
-							<select name="country">
-								<option value="none" selected="" disabled="">Select country</option>
-								
-								<option value="Australia">Australia</option>
-								<option value="China">China</option>
-								<option value="New Jersey">New Jersey</option>
-								<option value="Spain">Spain</option>
-								<option value="Switzerland">Switzerland</option>
-							</select>
-							<i></i>
-						</label>
-					</div>
-					end country -->
-				<!-- 	<!-- start position -->
-					<div class="main-row">
-						<label class="input select">
-							<select name="position">
-								<option value="none" selected disabled="">Choose position</option>
-								<option value="student">Student</option>
-								<option value="employee"> Employee</option>
-								<option value="business"> Business</option>
-							</select>
-							<i></i>
-						</label>
-					</div>
-					end position -->
+				
 					<!-- start city post code -->
 					<div class="first-line agileits">
 						<div class="span8 main-row">
 							<div class="input">
 								
-								<input type="text" id="city" placeholder="City" name="city" required="">
+								<input type="text" id="city" placeholder="City" name="city" required="" value="<%=u.getU_city()%>">
+							</div>
+						</div>
+						<div class="span8 main-row">
+							<div class="input">
+								
+								<input type="text" id="state" placeholder="State" name="state" required="" value="<%=u.getU_State()%>">
 							</div>
 						</div>
 						
+						<div class="main-row">
+						<label class="input select">
+							<select name="gender" value="<%=u.getU_Gender()%>">>
+								<option value="none" selected disabled="">Gender</option>
+								<option value="male">Male</option>
+								<option value="female"> Female</option>
+								
+							</select>
+							<i></i>
+						</label>
 					</div>
+					</div>
+				<%}%>
 					<!-- end city post code -->
 
 					<!-- start address -->
-					<div class="main-row">
-						<div class="input">
-							
-							<input type="text" id="address" placeholder="Address" name="address" required="">
-						</div>
-					</div>
+					
 					<!-- end address -->
 
 
 					
 
-					<!-- start message -->
-					<div class="main-row">
-						<div class="input">
-							<textarea placeholder="Additional info" spellcheck="false" name="message"></textarea>
-								<span class="tooltip tooltip-right-top">Key Skills</span>
-						</div>
-					</div>
-					<!-- end message -->
+				
 
 					<!-- start files -->
 					
@@ -197,8 +210,8 @@
 				<!-- end /.content -->
 
 				<div class="footer">
-					<button type="submit" class="primary-btn">Send</button>
-					<button type="reset" class="secondary-btn">Reset</button>
+					<input type="submit" class="primary-btn" color="red" name="action" value="update">
+					
 				</div>
 				<!-- end /.footer -->
 
@@ -223,6 +236,21 @@
 				$('#post').mask('999-9999', {placeholder:'x'});
 
 			});
+			$("#profileImage").click(function(e) {
+			    $("#imageUpload").click();
+			});
+
+			function fasterPreview( uploader ) {
+			    if ( uploader.files && uploader.files[0] ){
+			          $('#profileImage').attr('src', 
+			             window.URL.createObjectURL(uploader.files[0]) );
+			    }
+			}
+
+			$("#imageUpload").change(function(){
+			    fasterPreview( this );
+			});
 		</script>
+		</div>
 </body>
 </html>

@@ -3,6 +3,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style> 
+            select { 
+                appearance: none; 
+                outline: 0; 
+                background: rgb(240, 240, 240); 
+                background-image: none; 
+                width: 100%; 
+                height: 100%; 
+                color: black; 
+                cursor: pointer; 
+                border:1px solid white; 
+                border-radius:3px; 
+                 color:grey;
+                  padding-left: 20px;
+              
+                
+            } 
+            .select { 
+                position: relative; 
+                display: block; 
+                width: 15em; 
+                height: 2.7em; 
+                line-height: 3; 
+                overflow: hidden; 
+                border-radius: .25em; 
+                padding-bottom:12px; 
+               
+                  
+            } 
+            h1 { 
+                color:grey;
+                justify-content: center;
+            } 
+        </style> 
 <meta charset="ISO-8859-1">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,40 +69,9 @@
 	
 		<!-- //form-26-section --><!-- /form-26-section -->
 		<section class="form-26-1">
-		 <!-- header -->
-            <header class="header">
-                <div class="container-fluid px-lg-5">
-                    <!-- nav -->
-                    <nav class="py-4">
-                        <div id="logo">
-                            <h1> <a href="index.html" class="editContent" style="color: rgb(204, 0, 0); font-size: 40px; background-color: rgba(0, 0, 0, 0); font-family: &quot;Source Sans Pro&quot;, sans-serif; outline: none; outline-offset: -2px; cursor: inherit;" src="bundles/best1.gif">Goodreads</a></h1>
-                        </div>
-
-                        <label for="drop" class="toggle">Menu</label>
-                        <input type="checkbox" id="drop">
-                        <ul class="menu mt-2">
-                            <li class="active"><a href="index.html" style="color: rgb(0, 0, 0); font-weight: 700; text-transform: uppercase; outline: none; cursor: inherit;">HOME</a></li>
-                            <li><a href="about.html" style="outline: none; cursor: inherit;">About</a></li>
-                            <li><a href="blog.html" style="outline: none; cursor: inherit;">Blog</a></li>
-                            <li>
-                                <!-- First Tier Drop Down -->
-                                <label for="drop-2" class="toggle">Drop Down <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span> </label>
-                                <a href="#" style="outline: none; cursor: inherit;">Drop Down <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span></a>
-                                <input type="checkbox" id="drop-2">
-                                <ul>
-                                    <li><a href="blog.html" style="outline: none; cursor: inherit;">Blog</a></li>
-                                    <li><a href="shop.html" style="outline: none; cursor: inherit;">Shop Now</a></li>
-                                    <li><a href="shop-single.html" style="outline: none; cursor: inherit;">Single Page</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html" style="outline: none; cursor: inherit;">Contact</a></li>
-                                             <li><a href="login.jsp" style="outline: none; cursor: inherit;">Login</a></li>
-                        </ul>
-                    </nav>
-                    <!-- //nav -->
-                </div>
-            </header>
-            <!-- //header -->
+		 <div>
+        <%@include file="header.jsp" %>
+        </div>
 			<div class="form-26-mian bg bg1" style="background-color: rgba(0, 0, 0, 0); margin-top: 0px; background-image: url(&quot;loginimages/411522.jpg&quot;); outline: none; cursor: inherit;">
 				<div class="layer">
 					<div class="wrapper">
@@ -116,14 +119,15 @@
 										<div class="form-input editContent" style="outline: none; cursor: inherit;">
 											<input type="password" name="cpassword" placeholder="Confirm Password" required="">
 										</div>
-										<div class="form-input editContent" style="outline: none; outline-offset: -2px; cursor: inherit; ">
+										<div class="select">
+										<div id="select">
 												<select name="Gender">
 		<option value="Gender">Gender	</option>
 		<option value="male">Male</option>
 		<option value="female">Female</option>
 		<option value="other">Others</option>
 	</select>
-											</div>
+						</div>					</div>
 
 										<div class="form-input editContent" style="outline: none; cursor: inherit;">
 										

@@ -1,3 +1,4 @@
+<%@page import="com.goodreads.bin.user_master"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -31,6 +32,26 @@
 </head>
 
 <body>
+
+<%
+  
+  response.setHeader("Cache-Control", "no-cache");
+	response.setHeader("Cache-Control", "no-store");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
+  user_master user = null;
+    		if(session!=null)
+    		{
+    			if(session.getAttribute("user")!=null)
+    			{
+    				response.sendRedirect("index.jsp");
+    			}
+    			
+    		}
+    		
+  
+  %>
+
 	<!-- page -->
 	<div id="page" class="page">
 	
@@ -79,14 +100,27 @@
 							</div>
 							<div class="form-right-inf editContent" style="outline: none; cursor: inherit;">
 								<form action="User_masterController" method="post" class="signin-form">
+									<%
+                    if(session.getAttribute("error")!=null)
+                    {
+                    	String error = (String) session.getAttribute("error");
+                    	
+                    	session.removeAttribute("error");
+                    	%>
+                   		 <div class="form-group">
+                      <label for="login-username" class="label-material" id="error"><%=error %></label>
+                    </div>
+                    	<%
+                    }
+                    %>
 									<div class="forms-gds editContent" style="outline: none; cursor: inherit;">
 										<div class="form-input editContent" style="outline: none; cursor: inherit;">
 											<input type="email" name="email" placeholder="Email" required="">
 										</div>
 						
-										<div class="form-input editContent" style="outline: none; cursor: inherit;"><input type="submit" id="confirm" class="btn btn-primary" name="action" id="action" style="outline: none; cursor: inherit; background-color: red;border: red" value="Send OTP"></div>
+										<div class="form-input editContent" style="outline: none; cursor: inherit;"><input type="submit" id="sendotp" class="btn btn-primary" name="action" id="action" style="outline: none; cursor: inherit; background-color: red;border: red" value="Send OTP"></div>
 									</div>
-									<h6 class="already editContent" style="outline: none; cursor: inherit;"> Dont have an account? <a href="register.jsp"><span class="editContent" style="outline: none; cursor: inherit;">Register Here<span></span></span></a></h6>
+				
 								</form>
 
 							</div>

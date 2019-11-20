@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -6,10 +7,12 @@
  <!-- //Meta tag Keywords -->
    
     <meta charset="utf-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- //Meta tag Keywords -->
     <!-- Custom-Files -->
     <link rel="stylesheet" href="css/bootstrap.css">
+   
     <!-- Bootstrap-Core-CSS -->
     <!--/ Style-CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
@@ -25,64 +28,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <div id="page" class="page">
 
     <!-- mian-content -->
         <div class="main-banner bg bg1" id="home" style="background-color: rgba(0, 0, 0, 0); margin-top: 0px; background-image: url(&quot;images/wp2330482-girls-reading-books-wallpapers.jpg&quot;);">
-            <!-- header -->
-            <header class="header">
-                <div class="container-fluid px-lg-5">
-                    <!-- nav -->
-                    <nav class="py-4">
-                        <div id="logo">
-                            <h1> <a href="index.html" class="editContent" style="color: rgb(204, 0, 0); font-size: 40px; background-color: rgba(0, 0, 0, 0); font-family: &quot;Source Sans Pro&quot;, sans-serif; outline: none; outline-offset: -2px; cursor: inherit;" src="bundles/best1.gif">Goodreads</a></h1>
-                        </div>
-
-                        <label for="drop" class="toggle">Menu</label>
-                        <input type="checkbox" id="drop">
-                        <ul class="menu mt-2">
-                            <li class="active"><a href="index.html" style="color: rgb(0, 0, 0); font-weight: 700; text-transform: uppercase; outline: none; cursor: inherit;">HOME</a></li>
-                            <li><a href="about.html" style="outline: none; cursor: inherit;">About</a></li>
-                            <li><a href="profile.jsp" style="outline: none; cursor: inherit;">Profile</a></li>
-                            <li>
-                                <!-- First Tier Drop Down -->
-                                <label for="drop-2" class="toggle">Drop Down <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span> </label>
-                                <a href="#" style="outline: none; cursor: inherit;">Drop Down <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span></a>
-                                <input type="checkbox" id="drop-2">
-                                <ul>
-                                    <li><a href="blog.html" style="outline: none; cursor: inherit;">Blog</a></li>
-                                    <li><a href="shop.html" style="outline: none; cursor: inherit;">Shop Now</a></li>
-                                    <li><a href="shop-single.html" style="outline: none; cursor: inherit;">Single Page</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html" style="outline: none; cursor: inherit;">Contact</a></li>
-                            
-                            
-                            <%
-							
-							if(session.getAttribute("user")==null) { 
-								%>
-
-                            
-                            
-                            
-                            <li><a href="login.jsp" style="outline: none; cursor: inherit;">Login</a></li>
-                            <%}
-                            %>
-                            else
-							<% {%>
-							
-								
-								 <li><a href="#" style="outline: none; cursor: inherit;">Logout</a></li>
-							<% }%>
-                            
-                            <li><a href="admin/login.jsp" style="outline: none; cursor: inherit;">Admin Login</a></li>
-                        </ul>
-                    </nav>
-                    <!-- //nav -->
-                </div>
-            </header>
-            <!-- //header -->
+        <div>
+        <%@include file="header.jsp" %>
+        </div>
+        
+                         
             <!--/banner-->
             <div class="banner-info">
                 <p class="editContent" style="color: rgb(0, 0, 0); font-size: 15px; background-color: rgba(0, 0, 0, 0); font-family: Lato, sans-serif;"><b>best seller of the month</b></p>
