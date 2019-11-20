@@ -577,4 +577,7 @@
             </div>
           </section>
           <!-- Page Footer-->
+          <script src=" ./vendor/chart.js/Chart.min.js"></script>
+    <script src=" ./js/charts-home.js"></script>
+    
     <jsp:include page="footer.jsp"></jsp:include>

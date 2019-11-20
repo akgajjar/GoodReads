@@ -40,10 +40,13 @@
 
 	<section class="forms">
 		<div class="container-fluid">
-			<div class="row">
+		<div class="col-lg-12">
+                  <div class="card">
 				<div class="card-header d-flex align-items-center">
 					<h3 class="h4">Add Category</h3>
 				</div>
+			<div class="row">
+			
 				<div class="card-body">
 					<form class="form-horizontal" method="post"
 						action="../book_category_masterAdminController">
@@ -77,6 +80,8 @@
 
 					</form>
 				</div>
+			</div>
+			</div>
 			</div>
 		</div>
 	</section>
