@@ -14,14 +14,11 @@
         <property name="Cat_Description" type="java.lang.String" length="500" not-null="true">
             <column name="CAT_DESCRIPTION" />
         </property>
-        <set name="books" table="BELONGS_TO_CATEGORY" inverse="true" lazy="true" fetch="select">
+        <set name="books" table="BELONGS_TO_CATEGORY" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="CAT_ID" length="15" unique-key="true" not-null="true"/>
-            </key><!-- 
-             <many-to-many entity-name="com.goodreads.bin.book_master">
-                   <column name="ISBN"  length="13" not-null="true" unique-key="true"/>
-             </many-to-many>  -->
- 			<many-to-many class="com.goodreads.bin.book_master" column="ISBN" />           
+            </key>
+ 			<many-to-many class="com.goodreads.bin.book_master" lazy="false"  column="ISBN" />           
             
         </set>
     </class>

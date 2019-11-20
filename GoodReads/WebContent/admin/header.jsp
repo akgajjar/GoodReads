@@ -2,7 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <html>
   
-<!-- Mirrored from demo.bootstrapious.com/admin-premium/1-4-5/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Nov 2019 02:04:47 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -141,11 +140,31 @@
               </ul>
             </li>
             
-            <li><a href="#adminDropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-users"></i>Users </a>
+            <li><a href="#adminDropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-users"></i>User </a>
               <ul id="adminDropdown" class="collapse list-unstyled ">
                 <li><a href="addadmin.jsp">Add Admin</a></li>
                 <li><a href="showallusers.jsp">Show All Users</a></li>
               </ul>
+            </li>
+            
+            <li><a href="#catDropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-th-large"></i>Category </a>
+              <ul id="catDropdown" class="collapse list-unstyled ">
+                <li><a href="addcategory.jsp">Add Category</a></li>
+                <li><a href="showallcategories.jsp">Show All Categories</a></li>
+ 		 </ul>
+            </li>
+            
+            
+            <li><a href="#productDropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-book"></i>Book</a>
+              <ul id="productDropdown" class="collapse list-unstyled ">
+                <li><a href="showallbooks.jsp">Show All Books</a></li>
+ 		 </ul>
+            </li>
+            
+            <li><a href="#orderDropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-envelope"></i>Order</a>
+              <ul id="orderDropdown" class="collapse list-unstyled ">
+                <li><a href="showallorders.jsp">Show All Orders</a></li>
+ 		 </ul>
             </li>
             
             <li><a href="#formsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Forms </a>

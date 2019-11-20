@@ -20,7 +20,7 @@
         <property name="B_Page" type="int" length="5" not-null="true">
             <column name="B_PAGE" />
         </property>
-        <property name="B_Type" type="char" not-null="true">
+        <property name="B_Type" type="java.lang.String" length="10" not-null="true">
             <column name="B_TYPE" />
         </property>
         <property name="B_Lease_Days" type="int" length="5" not-null="true">
@@ -48,25 +48,25 @@
             
         </set>
         
-        <set name="comments" table="COMMENT_MASTER" inverse="true" lazy="true">
+        <set name="comments" table="COMMENT_MASTER" inverse="true" lazy="false">
             <key>
                 <column name="ISBN" length="13"/>
             </key>
             <one-to-many class="com.goodreads.bin.comment_master" />
         </set>  
-        <set name="bookmarks" table="BOOKMARK_MASTER" inverse="true" lazy="true">
+        <set name="bookmarks" table="BOOKMARK_MASTER" inverse="true" lazy="false">
             <key>
                 <column name="ISBN" length="13"  />
       	    </key>
             <one-to-many class="com.goodreads.bin.bookmark_master" />
         </set>
- 		<set name="ratings" table="RATING_MASTER" inverse="true" lazy="true">
+ 		<set name="ratings" table="RATING_MASTER" inverse="true" lazy="false">
             <key>
                 <column name="ISBN" length="13"/>
             </key>
             <one-to-many class="com.goodreads.bin.rating_master" />
         </set>
-        <set name="order_items" table="ORDER_ITEMS_MASTER" inverse="true" lazy="true">
+        <set name="order_items" table="ORDER_ITEMS_MASTER" inverse="true" lazy="false">
             <key>
                 <column name="ISBN" length="13"/>
             </key>

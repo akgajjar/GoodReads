@@ -34,7 +34,6 @@ public class user_masterAdminController extends HttpServlet {
 		String action = request.getParameter("action");
 
 		if (action.equalsIgnoreCase("Login")) {
-			System.out.println("");
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
 

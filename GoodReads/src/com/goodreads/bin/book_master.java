@@ -14,7 +14,7 @@ public class book_master {
 	private int B_Lease_Amount;
 	private String B_Description;
 	private user_master user_master;
-	private char B_Type;
+	private String B_Type;
 	private Timestamp B_Date;
 	private Set<book_category_master> categories;
 	private Set<comment_master> comments;
@@ -69,25 +69,23 @@ public class book_master {
 	public void setB_Description(String b_Description) {
 		B_Description = b_Description;
 	}
-	
-	public char getB_Type() {
-		return B_Type;
-	}
-	
-	public Timestamp getB_Date() {
-		return B_Date;
-	}
-	public void setB_Date(Timestamp b_Date) {
-		B_Date = b_Date;
-	}
-	public void setB_Type(char b_Type) {
-		B_Type = b_Type;
-	}
 	public user_master getUser_master() {
 		return user_master;
 	}
 	public void setUser_master(user_master user_master) {
 		this.user_master = user_master;
+	}
+	public String getB_Type() {
+		return B_Type;
+	}
+	public void setB_Type(String b_Type) {
+		B_Type = b_Type;
+	}
+	public Timestamp getB_Date() {
+		return B_Date;
+	}
+	public void setB_Date(Timestamp b_Date) {
+		B_Date = b_Date;
 	}
 	public Set<book_category_master> getCategories() {
 		return categories;
@@ -107,7 +105,6 @@ public class book_master {
 	public void setBookmarks(Set<bookmark_master> bookmarks) {
 		this.bookmarks = bookmarks;
 	}
-	
 	public Set<rating_master> getRatings() {
 		return ratings;
 	}
@@ -120,8 +117,6 @@ public class book_master {
 	public void setOrder_items(Set<order_items_master> order_items) {
 		this.order_items = order_items;
 	}
-	
-	
-	
+
 	
 }

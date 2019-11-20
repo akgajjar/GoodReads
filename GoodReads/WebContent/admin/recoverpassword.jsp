@@ -58,7 +58,10 @@
 	response.setHeader("Cache-Control", "no-store");
 	response.setHeader("Pragma", "no-cache");
 	response.setDateHeader("Expires", 0);
+	
+	
 	session.removeAttribute("otp");
+	
 	ForgotPassword fpass=(ForgotPassword)session.getAttribute("FpassData");
 	String email = fpass.getEmail();
 	session.invalidate(); 

@@ -1,3 +1,5 @@
+<%@page import="com.goodreads.bin.order_master"%>
+<%@page import="com.goodreads.service.Order_masterService"%>
 <%@page import="com.goodreads.bin.user_master"%>
 <%@page import="java.util.List"%>
 <%@page import="com.goodreads.service.User_masterService"%>
@@ -40,9 +42,9 @@
     
 	Resource r = new ClassPathResource("beans.xml");
 	BeanFactory factory = new XmlBeanFactory(r);
-	User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
+	Order_masterService sdao = (Order_masterService) factory.getBean("order_masterservice");
 	
-	List<user_master> list = sdao.getUsers();
+	List<order_master> list = sdao.getOrders();
     %>
 <link rel="stylesheet"
 	href="./vendor/datatables.net-bs4/css/dataTables.bootstrap4.css">
@@ -53,7 +55,7 @@
 <div class="content-inner">
 	<header class="page-header">
 		<div class="container-fluid">
-			<h2 class="no-margin-bottom">Show All Users</h2>
+			<h2 class="no-margin-bottom">Show All Orders</h2>
 		</div>
 	</header>
 
@@ -61,14 +63,14 @@
 	<div class="breadcrumb-holder container-fluid">
 		<ul class="breadcrumb">
 			<li class="breadcrumb-item"><a href="admin/index.jsp">Home</a></li>
-			<li class="breadcrumb-item active">Show All Users</li>
+			<li class="breadcrumb-item active">Show All Orders</li>
 		</ul>
 	</div>
 	<section>
 		<div class="container-fluid">
 			<div class="card">
 				<div class="card-header">
-					<h4>Show All Users</h4>
+					<h4>Show All Orders</h4>
 				</div>
 				<div class="card-body">
 
@@ -76,31 +78,29 @@
 						<table id="datatable1" style="width: 100%;" class="table">
 							<thead>
 								<tr>
-									<th>User Id</th>
-									<th>First Name</th>
-									<th>Middle Name</th>
-									<th>Last Name</th>
-									<th>Mobile No</th>
-									<th>Email Id</th>
-									<th>User Type</th>
+									<th>Order Id</th>
+									<th>User's Name</th>
+									<th>Order Date</th>
+									<th>Order Type</th>
+									<th>Order's Total Amount</th>
+									<th>No of Items</th>
 									<th>More Details</th>
 								</tr>
 							</thead>
 							<tbody>
 
 								<%
-                      for(user_master u : list)
+                      for(order_master u : list)
                       {%>
 
 								<tr>
-									<td><%=u.getU_Id() %></td>
-									<td><a href="#" class="text-muted"><%=u.getU_Fname() %></a></td>
-									<td><%=u.getU_Mname() %></td>
-									<td><%=u.getU_Lname() %></td>
-									<td><%=u.getU_Mobile() %></td>
-									<td><%=u.getU_Email() %></td>
-									<td><%=u.getU_Type()%></td>
-									<td><a href="showuserdetails.jsp" style="color: black;"><i
+									<td><%=u.getOrder_Id() %></td>
+									<td><a href="#" class="text-muted"><%=u.getUser().getU_Fname()+" "+u.getUser().getU_Mname()+" "+u.getUser().getU_Lname()%></a></td>
+									<td><%=u.getOrder_Date() %></td>
+									<td><%=u.getOrder_Type() %></td>
+									<td><%=u.getOrder_Final_Price() %></td>
+									<td><%=u.getItems().size() %>
+									<td><a href="showorderdetails.jsp" style="color: black;"><i
 											style="padding-left: 1em;" class="fa fa-2x fa-sign-in"
 											aria-hidden="true"></i></a></td>
 								</tr>

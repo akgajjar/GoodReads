@@ -1,3 +1,5 @@
+<%@page import="com.goodreads.service.Book_masterService"%>
+<%@page import="com.goodreads.bin.book_master"%>
 <%@page import="com.goodreads.bin.user_master"%>
 <%@page import="java.util.List"%>
 <%@page import="com.goodreads.service.User_masterService"%>
@@ -38,11 +40,11 @@
   %>
 <%
     
-	Resource r = new ClassPathResource("beans.xml");
-	BeanFactory factory = new XmlBeanFactory(r);
-	User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
-	
-	List<user_master> list = sdao.getUsers();
+Resource r = new ClassPathResource("beans.xml");
+BeanFactory factory = new XmlBeanFactory(r);		
+Book_masterService bs= (Book_masterService) factory.getBean("book_masterservice");
+
+	List<book_master> list = bs.getBooks();
     %>
 <link rel="stylesheet"
 	href="./vendor/datatables.net-bs4/css/dataTables.bootstrap4.css">
@@ -53,7 +55,7 @@
 <div class="content-inner">
 	<header class="page-header">
 		<div class="container-fluid">
-			<h2 class="no-margin-bottom">Show All Users</h2>
+			<h2 class="no-margin-bottom">Show All Books</h2>
 		</div>
 	</header>
 
@@ -61,14 +63,14 @@
 	<div class="breadcrumb-holder container-fluid">
 		<ul class="breadcrumb">
 			<li class="breadcrumb-item"><a href="admin/index.jsp">Home</a></li>
-			<li class="breadcrumb-item active">Show All Users</li>
+			<li class="breadcrumb-item active">Show All Books</li>
 		</ul>
 	</div>
 	<section>
 		<div class="container-fluid">
 			<div class="card">
 				<div class="card-header">
-					<h4>Show All Users</h4>
+					<h4>Show All Books</h4>
 				</div>
 				<div class="card-body">
 
@@ -76,31 +78,29 @@
 						<table id="datatable1" style="width: 100%;" class="table">
 							<thead>
 								<tr>
-									<th>User Id</th>
-									<th>First Name</th>
-									<th>Middle Name</th>
-									<th>Last Name</th>
-									<th>Mobile No</th>
-									<th>Email Id</th>
-									<th>User Type</th>
+									<th>ISBN</th>
+									<th>Book Name</th>
+									<th>Book Author</th>
+									<th>Book Price</th>
+									<th>Book Type</th>
+									<th>User's Name</th>
 									<th>More Details</th>
 								</tr>
 							</thead>
 							<tbody>
 
 								<%
-                      for(user_master u : list)
+                      for(book_master b : list)
                       {%>
 
 								<tr>
-									<td><%=u.getU_Id() %></td>
-									<td><a href="#" class="text-muted"><%=u.getU_Fname() %></a></td>
-									<td><%=u.getU_Mname() %></td>
-									<td><%=u.getU_Lname() %></td>
-									<td><%=u.getU_Mobile() %></td>
-									<td><%=u.getU_Email() %></td>
-									<td><%=u.getU_Type()%></td>
-									<td><a href="showuserdetails.jsp" style="color: black;"><i
+									<td><%=b.getISBN()%></td>
+									<td><a href="#" class="text-muted"><%=b.getB_Name() %></a></td>
+									<td><%=b.getB_Author() %></td>
+									<td><%=b.getB_price() %></td>
+									<td><%=b.getB_Type() %></td>
+									<td><%=b.getUser_master().getU_Fname()+" "+b.getUser_master().getU_Mname()+" "+b.getUser_master().getU_Lname()%></td>
+									<td><a href="showbookdetails.jsp" style="color: black;"><i
 											style="padding-left: 1em;" class="fa fa-2x fa-sign-in"
 											aria-hidden="true"></i></a></td>
 								</tr>

@@ -8,13 +8,13 @@
             <column name="ORDER_ID" />
             <generator class="increment" />
         </id>
-        <many-to-one name="user" class="com.goodreads.bin.user_master" fetch="select" >
+        <many-to-one name="user" class="com.goodreads.bin.user_master" lazy="false" fetch="select" >
             <column name="U_ID" length="10" not-null="true"   />
         </many-to-one>
         <property name="Order_Date" type="java.sql.Timestamp" not-null="true" >
             <column name="ORDER_DATE" />
         </property>
-        <property name="Order_Type" type="char" not-null="true">
+        <property name="Order_Type" type="java.lang.String" length="10" not-null="true">
             <column name="ORDER_TYPE" />
         </property>
         <property name="Order_Days_Of_Lease" type="int" length="5">
@@ -50,7 +50,7 @@
         <property name="pincode" type="int" length="10" not-null="true">
             <column name="PINCODE" />
         </property>
-        <set name="items" table="ORDER_ITEMS_MASTER" inverse="true" lazy="true">
+        <set name="items" table="ORDER_ITEMS_MASTER" inverse="true" lazy="false">
             <key>
                 <column name="ORDER_ID" length="10"/>
             </key>
@@ -59,6 +59,6 @@
         
         
         <one-to-one name="payment" class="com.goodreads.bin.payment_master"
-			cascade="save-update" fetch="select" lazy="proxy" />
+			cascade="save-update" fetch="select" lazy="false" />
     </class>
 </hibernate-mapping>
