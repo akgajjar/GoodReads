@@ -47,10 +47,10 @@
                             <li>
                                 <!-- First Tier Drop Down -->
                                 <label for="drop-2" class="toggle">Drop Down <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span> </label>
-                                <a href="#" style="outline: none; cursor: inherit;">Drop Down <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span></a>
+                                <a href="#" style="outline: none; cursor: inherit;"> CATEGORIES <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span></a>
                                 <input type="checkbox" id="drop-2">
                                 <ul>
-                                    <li><a href="blog.html" style="outline: none; cursor: inherit;">Blog</a></li>
+                                    <li><a href="NewFile.jsp" style="outline: none; cursor: inherit;">Comics & Graphic Novels</a></li>
                                     <li><a href="shop.html" style="outline: none; cursor: inherit;">Shop Now</a></li>
                                     <li><a href="shop-single.html" style="outline: none; cursor: inherit;">Single Page</a></li>
                                 </ul>
@@ -396,12 +396,11 @@
                         </li>
                     </ul>
                     <p class="editContent mt-3" style="outline: none; cursor: inherit;"><span class="fa fa-quote-left" style="outline: none; cursor: inherit;"></span> Lorem Ipsum has been the industry's standard since the 1500s. Praesent ullamcorper dui turpis.Nulla pellentesque mi non laoreet eleifend. Integer porttitor mollisar lorem, at molestie arcu pulvinar ut. <span class="fa fa-quote-right" style="outline: none; cursor: inherit;"></span></p>
-
+	
                 </div>
             </div>
         </section>
-        <!--//testimonials-->
-        <!--/ab -->
+       
         <section class="about py-5 editContent" style="outline: none; outline-offset: -2px; cursor: inherit;">
             <div class="container pb-lg-3">
                 <h3 class="tittle text-center editContent" style="outline: none; cursor: inherit;">Popular Books</h3>
