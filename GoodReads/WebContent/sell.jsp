@@ -24,60 +24,30 @@
 
 
 <body data-gr-c-s-loaded="true">
-
+<div class="form-26-mian bg bg1" style="background-color: rgba(0, 0, 0, 0); margin-top: 0px; background-image: url(&quot;loginimages/411522.jpg&quot;); background-size: 150%;">
+		
     <div id="page" class="page">
         <div id="home" style="outline: none; cursor: inherit;">
-            <!-- header -->
-            <header class="header">
-                <div class="container-fluid px-lg-5">
-                    <!-- nav -->
-                    <nav class="py-4">
-                        <div id="logo">
-                            <h1> <a href="index.html" class="editContent" style="outline: none; cursor: inherit;">GoodReades</a></h1>
-                        </div>
-
-                        <label for="drop" class="toggle">Menu</label>
-                        <input type="checkbox" id="drop">
-                        <ul class="menu mt-2">
-                            <li><a href="index.html" style="outline: none; cursor: inherit;">Home</a></li>
-                            <li><a href="about.html" style="outline: none; cursor: inherit;">About</a></li>
-                            <li><a href="blog.html" style="outline: none; cursor: inherit;">Blog</a></li>
-                            <li>
-                                <!-- First Tier Drop Down -->
-                                <label for="drop-2" class="toggle">Drop Down <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span> </label>
-                                <a href="#" style="outline: none; cursor: inherit;">Drop Down <span class="fa fa-angle-down" aria-hidden="true" style="outline: none; cursor: inherit;"></span></a>
-                                <input type="checkbox" id="drop-2">
-                                <ul>
-                                    <li><a href="blog.html" style="outline: none; cursor: inherit;">Blog</a></li>
-                                    <li><a href="shop.html" style="outline: none; cursor: inherit;">Shop Now</a></li>
-                                    <li><a href="single.html" style="outline: none; cursor: inherit;">Single Page</a></li>
-                                </ul>
-                            </li>
-                            <li class="active"><a href="contact.html" style="outline: none; cursor: inherit;">Seles</a></li>
-                        </ul>
-                    </nav>
-                    <!-- //nav -->
-                </div>
-            </header>
-            <!-- //header -->
+        
+           <div>f
+        <%@include file="header.jsp" %>
+        </div>
+        
 
         </div>
 
-        <ol class="breadcrumb editContent" style="position:absolute;top:12%;outline: none; cursor: inherit">
-            <li class="breadcrumb-item">
-                <a href="index.html" class="editContent" style="outline: none; cursor: inherit;">Home</a>
-            </li>
-            <li class="breadcrumb-item active editContent" style="outline: none; cursor: inherit;">Seles</li>
-        </ol>
+       
         <!---->
         <!--// mian-content -->
         <!-- banner -->
         <section class="ab-info-main py-5 editContent" style="outline: none; cursor: inherit;">
             <div class="container py-3">
-                <h3 class="tittle text-center editContent" style="outline: none; cursor: inherit;"><span class="sub-tittle editContent" style="outline: none; cursor: inherit;">Sele Here</span> Books Details</h3>
+                <h3 class="tittle text-center editContent" style="outline: none; cursor: inherit; color: white;"><span class="sub-tittle editContent" style="outline: none; cursor: inherit;">Sele Here</span> Books Details</h3>
                 <div class="row contact-main-info mt-15">
                     <div class="col-md-8 contact-right-content">
-                        <form action="#" method="post">
+                    
+                        <form action="Book_masterController" method="post">
+                        
                             <div class="form-control editContent" style="outline: none; cursor: inherit;">
                                 <input type="text" name="isbn" placeholder="ISBN" required="">
                             </div>
@@ -106,7 +76,7 @@
                                 <textarea name="bdesc" placeholder="Book Description" required=""></textarea>
                             </div>
                             <div class="read mt-3">
-                                <button class="btn bt1" type="submit" style="outline: none; cursor: inherit;">Submit </button>
+                                <input class="btn bt1" type="submit" style="outline: none; cursor: inherit; color: red;" value="Sell">
                             </div>
                         </form>
                     </div>
@@ -177,8 +147,7 @@ for (i = 0; i < x.length; i++) {
     });
 }
 function closeAllSelect(elmnt) {
-  /*a function that will close all select boxes in the document,
-  except the current select box:*/
+  
   var x, y, i, arrNo = [];
   x = document.getElementsByClassName("select-items");
   y = document.getElementsByClassName("select-selected");

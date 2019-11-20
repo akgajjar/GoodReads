@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
@@ -149,8 +148,25 @@ public class User_masterController extends HttpServlet {
 			response.sendRedirect("index.jsp");
 		}
 		
+		if(action.equalsIgnoreCase("Sell"))
+		{
+		
+			user_master u=new user_master();
+			
+			u.setU_Type("user");
+			u.setU_Block(false);
+			u.setU_Creation_Date(new Timestamp(new Date().getTime()));
+			
+		
+			
+			sdao.saveUser(u);
+			request.getRequestDispatcher("login.jsp").include(request, response);
+
+
+	}
 	}
 
+	
 }
 
 	

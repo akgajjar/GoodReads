@@ -78,7 +78,7 @@
                             <div class="icon-gd col-md-3 text-center"> <span class="fa fa-gift" aria-hidden="true" style="outline: none; cursor: inherit;"></span></div>
 
                             <div class="icon-gd-info col-md-9">
-                                <h3 class="mb-2 editContent">Sell books</h3>
+                                <h3 class="mb-2 editContent"><a href="sell.jsp">Sell books</a></h3>
                                 <p class="editContent" style="outline: none; cursor: inherit;">Register &amp; save up to $29%</p>
                             </div>
 
