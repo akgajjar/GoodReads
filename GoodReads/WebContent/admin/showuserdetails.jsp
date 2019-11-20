@@ -34,7 +34,7 @@
 <div class="content-inner">
 	<header class="page-header">
 		<div class="container-fluid">
-			<h2 class="no-margin-bottom">Add Admin</h2>
+			<h2 class="no-margin-bottom">Show User Details</h2>
 		</div>
 	</header>
 
@@ -42,20 +42,15 @@
 	<div class="breadcrumb-holder container-fluid">
 		<ul class="breadcrumb">
 			<li class="breadcrumb-item"><a href="admin/index.jsp">Home</a></li>
-			<li class="breadcrumb-item active">Add Admin</li>
+			<li class="breadcrumb-item active">Show User Details</li>
 		</ul>
 	</div>
-
 	<section class="forms">
 		<div class="container-fluid">
-			 <div class="col-lg-12">
-                  <div class="card">
-			<div class="card-header d-flex align-items-center">
-					<h3 class="h4">Add admin</h3>
-				</div>
 			<div class="row">
-				
-				
+				<div class="card-header d-flex align-items-center">
+					<h3 class="h4">Show User Details</h3>
+				</div>
 				<div class="card-body">
 					<form class="form-horizontal" method="post"
 						action="../user_masterAdminController">
@@ -183,8 +178,6 @@
 
 
 					</form>
-					</div>
-				</div>
 				</div>
 			</div>
 		</div>

@@ -8,10 +8,10 @@
             <column name="ITEM_ID" />
             <generator class="increment" />
         </id>
-        <many-to-one name="book" class="com.goodreads.bin.book_master" fetch="select">
+        <many-to-one name="book" class="com.goodreads.bin.book_master" fetch="select" lazy="false">
             <column name="ISBN" length="13" not-null="true" />
         </many-to-one>
-        <many-to-one name="order" class="com.goodreads.bin.order_master" fetch="select">
+        <many-to-one name="order" class="com.goodreads.bin.order_master" fetch="select" lazy="false">
             <column name="ORDER_ID" length="10" not-null="true" />
         </many-to-one>
         <property name="Item_Amount" type="java.lang.Double" length="25" not-null="true">

@@ -9,7 +9,7 @@ public class order_master {
 	private int Order_Id;
 	private user_master user;
 	private Timestamp Order_Date;
-	private char Order_Type;
+	private String Order_Type;
 	private int Order_Days_Of_Lease;
 	private Double Order_Amount;
 	private Double Order_Discount;
@@ -42,10 +42,10 @@ public class order_master {
 	public void setOrder_Date(Timestamp order_Date) {
 		Order_Date = order_Date;
 	}
-	public char getOrder_Type() {
+	public String getOrder_Type() {
 		return Order_Type;
 	}
-	public void setOrder_Type(char order_Type) {
+	public void setOrder_Type(String order_Type) {
 		Order_Type = order_Type;
 	}
 	public int getOrder_Days_Of_Lease() {

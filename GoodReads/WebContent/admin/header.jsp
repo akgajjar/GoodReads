@@ -161,6 +161,12 @@
  		 </ul>
             </li>
             
+            <li><a href="#orderDropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-envelope"></i>Order</a>
+              <ul id="orderDropdown" class="collapse list-unstyled ">
+                <li><a href="showallorders.jsp">Show All Orders</a></li>
+ 		 </ul>
+            </li>
+            
             <li><a href="#formsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Forms </a>
               <ul id="formsDropdown" class="collapse list-unstyled ">
                 <li><a href="forms.html">Basic forms</a></li>

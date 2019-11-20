@@ -1,5 +1,5 @@
-<%@page import="com.goodreads.service.Book_masterService"%>
-<%@page import="com.goodreads.bin.book_master"%>
+<%@page import="com.goodreads.bin.order_master"%>
+<%@page import="com.goodreads.service.Order_masterService"%>
 <%@page import="com.goodreads.bin.user_master"%>
 <%@page import="java.util.List"%>
 <%@page import="com.goodreads.service.User_masterService"%>
@@ -40,11 +40,11 @@
   %>
 <%
     
-Resource r = new ClassPathResource("beans.xml");
-BeanFactory factory = new XmlBeanFactory(r);		
-Book_masterService bs= (Book_masterService) factory.getBean("book_masterservice");
-
-	List<book_master> list = bs.getBooks();
+	Resource r = new ClassPathResource("beans.xml");
+	BeanFactory factory = new XmlBeanFactory(r);
+	Order_masterService sdao = (Order_masterService) factory.getBean("order_masterservice");
+	
+	List<order_master> list = sdao.getOrders();
     %>
 <link rel="stylesheet"
 	href="./vendor/datatables.net-bs4/css/dataTables.bootstrap4.css">
@@ -55,7 +55,7 @@ Book_masterService bs= (Book_masterService) factory.getBean("book_masterservice"
 <div class="content-inner">
 	<header class="page-header">
 		<div class="container-fluid">
-			<h2 class="no-margin-bottom">Show All Books</h2>
+			<h2 class="no-margin-bottom">Show All Orders</h2>
 		</div>
 	</header>
 
@@ -63,14 +63,14 @@ Book_masterService bs= (Book_masterService) factory.getBean("book_masterservice"
 	<div class="breadcrumb-holder container-fluid">
 		<ul class="breadcrumb">
 			<li class="breadcrumb-item"><a href="admin/index.jsp">Home</a></li>
-			<li class="breadcrumb-item active">Show All Books</li>
+			<li class="breadcrumb-item active">Show All Orders</li>
 		</ul>
 	</div>
 	<section>
 		<div class="container-fluid">
 			<div class="card">
 				<div class="card-header">
-					<h4>Show All Books</h4>
+					<h4>Show All Orders</h4>
 				</div>
 				<div class="card-body">
 
@@ -78,29 +78,29 @@ Book_masterService bs= (Book_masterService) factory.getBean("book_masterservice"
 						<table id="datatable1" style="width: 100%;" class="table">
 							<thead>
 								<tr>
-									<th>ISBN</th>
-									<th>Book Name</th>
-									<th>Book Author</th>
-									<th>Book Price</th>
-									<th>Book Type</th>
+									<th>Order Id</th>
 									<th>User's Name</th>
+									<th>Order Date</th>
+									<th>Order Type</th>
+									<th>Order's Total Amount</th>
+									<th>No of Items</th>
 									<th>More Details</th>
 								</tr>
 							</thead>
 							<tbody>
 
 								<%
-                      for(book_master b : list)
+                      for(order_master u : list)
                       {%>
 
 								<tr>
-									<td><%=b.getISBN()%></td>
-									<td><a href="#" class="text-muted"><%=b.getB_Name() %></a></td>
-									<td><%=b.getB_Author() %></td>
-									<td><%=b.getB_price() %></td>
-									<td><%=b.getB_Type() %></td>
-									<td><%=b.getUser_master().getU_Fname()+" "+b.getUser_master().getU_Mname()+" "+b.getUser_master().getU_Lname()%></td>
-									<td><a href="showbookdetails.jsp" style="color: black;"><i
+									<td><%=u.getOrder_Id() %></td>
+									<td><a href="#" class="text-muted"><%=u.getUser().getU_Fname()+" "+u.getUser().getU_Mname()+" "+u.getUser().getU_Lname()%></a></td>
+									<td><%=u.getOrder_Date() %></td>
+									<td><%=u.getOrder_Type() %></td>
+									<td><%=u.getOrder_Final_Price() %></td>
+									<td><%=u.getItems().size() %>
+									<td><a href="showorderdetails.jsp" style="color: black;"><i
 											style="padding-left: 1em;" class="fa fa-2x fa-sign-in"
 											aria-hidden="true"></i></a></td>
 								</tr>
