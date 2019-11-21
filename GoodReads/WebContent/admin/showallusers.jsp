@@ -1,5 +1,4 @@
 <%@page import="com.goodreads.bin.user_master"%>
-<%@page import="java.util.List"%>
 <%@page import="com.goodreads.service.User_masterService"%>
 <%@page import="org.springframework.beans.factory.BeanFactory"%>
 <%@page import="org.springframework.beans.factory.xml.XmlBeanFactory"%>
@@ -8,42 +7,32 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
- <%
-  
-  response.setHeader("Cache-Control", "no-cache");
+<%
+	response.setHeader("Cache-Control", "no-cache");
 	response.setHeader("Cache-Control", "no-store");
 	response.setHeader("Pragma", "no-cache");
 	response.setDateHeader("Expires", 0);
-  user_master user = null;
-    		if(session!=null)
-    		{
-    			if(session.getAttribute("user")!=null)
-    			{
-    				user=(user_master) session.getAttribute("user");
-    			}
-    			else
-    			{
+	user_master user = null;
+	if (session != null) {
+		if (session.getAttribute("user") != null) {
+			user = (user_master) session.getAttribute("user");
+		} else {
 
-    				response.sendRedirect("login.jsp");
-    			}
-    			
-    		}
-    		else
-    		{
+			response.sendRedirect("login.jsp");
+		}
 
-				response.sendRedirect("login.jsp");
-    		}
-    		
-  
-  %>
+	} else {
+
+		response.sendRedirect("login.jsp");
+	}
+%>
 <%
-    
 	Resource r = new ClassPathResource("beans.xml");
 	BeanFactory factory = new XmlBeanFactory(r);
 	User_masterService sdao = (User_masterService) factory.getBean("user_masterservice");
-	
+
 	List<user_master> list = sdao.getUsers();
-    %>
+%>
 <link rel="stylesheet"
 	href="./vendor/datatables.net-bs4/css/dataTables.bootstrap4.css">
 <link rel="stylesheet"
@@ -89,24 +78,25 @@
 							<tbody>
 
 								<%
-                      for(user_master u : list)
-                      {%>
+									for (user_master u : list) {
+								%>
 
 								<tr>
-									<td><%=u.getU_Id() %></td>
-									<td><a href="#" class="text-muted"><%=u.getU_Fname() %></a></td>
-									<td><%=u.getU_Mname() %></td>
-									<td><%=u.getU_Lname() %></td>
-									<td><%=u.getU_Mobile() %></td>
-									<td><%=u.getU_Email() %></td>
+									<td><%=u.getU_Id()%></td>
+									<td><a href="showuserdetails.jsp?id=<%=u.getU_Id()%>"
+										class="text-muted"><%=u.getU_Fname()%></a></td>
+									<td><%=u.getU_Mname()%></td>
+									<td><%=u.getU_Lname()%></td>
+									<td><%=u.getU_Mobile()%></td>
+									<td><%=u.getU_Email()%></td>
 									<td><%=u.getU_Type()%></td>
-									<td><a href="showuserdetails.jsp" style="color: black;"><i
-											style="padding-left: 1em;" class="fa fa-2x fa-sign-in"
-											aria-hidden="true"></i></a></td>
+									<td><a href="showuserdetails.jsp?id=<%=u.getU_Id()%>"
+										style="color: black;"><i style="padding-left: 1em;"
+											class="fa fa-2x fa-sign-in" aria-hidden="true"></i></a></td>
 								</tr>
 								<%
-                      }
-                      %>
+									}
+								%>
 							</tbody>
 						</table>
 					</div>
@@ -114,15 +104,22 @@
 			</div>
 		</div>
 	</section>
+
+
+
+
+
 </div>
-</div>
-</div>
-</div>
+
 <!-- JavaScript files-->
 <script src="./vendor/jquery/jquery.min.js"></script>
-<script src="./vendor/popper.js/umd/popper.min.js"> </script>
+<script src="./vendor/popper.js/umd/popper.min.js">
+	
+</script>
 <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="./vendor/jquery.cookie/jquery.cookie.js"> </script>
+<script src="./vendor/jquery.cookie/jquery.cookie.js">
+	
+</script>
 <script src="./vendor/chart.js/Chart.min.js"></script>
 <script src="./vendor/jquery-validation/jquery.validate.min.js"></script>
 <!-- Data Tables-->

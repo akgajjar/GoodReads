@@ -86,6 +86,13 @@
 		class="com.goodreads.daoimpl.Rating_masterDaoImpl" autowire="byType">
 		<property name="template" ref="template"></property>
 	</bean>
+	<bean id="book_images_masterdao"
+		class="com.goodreads.daoimpl.Book_images_masterDaoImpl" autowire="byType">
+		<property name="template" ref="template"></property>
+	</bean>
+	
+
+
 
 	<bean id="user_masterservice"
 		class="com.goodreads.serviceImpl.User_masterServiceImpl"
@@ -123,5 +130,12 @@
 		class="com.goodreads.serviceImpl.Rating_masterServiceImpl"
 		autowire="byType">
 	</bean>
+		<bean id="book_Images_masterservice"
+		class="com.goodreads.serviceImpl.Book_Images_masterServiceImpl"
+		autowire="byType">
+	</bean>
+	
+
+
 
 </beans>

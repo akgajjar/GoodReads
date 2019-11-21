@@ -18,3 +18,7 @@
  		Resource r = new ClassPathResource("beans.xml");
 		BeanFactory factory = new XmlBeanFactory(r);		
 		Book_masterService os= (Book_masterService) factory.getBean("order_masterservice");
+		
+		Resource r = new ClassPathResource("beans.xml");
+		BeanFactory factory = new XmlBeanFactory(r);		
+		Book_images_masterService biservice= (Book_images_masterService) factory.getBean("book_Images_masterservice");

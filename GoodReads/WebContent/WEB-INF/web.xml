@@ -9,4 +9,9 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <context-param>
+    <param-name>imgurl</param-name>
+    <param-value>F:\STUDY\PROJECTS\tms\myFinal\WebContent\images\emppic</param-value>
+  </context-param>
 </web-app>

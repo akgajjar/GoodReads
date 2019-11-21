@@ -72,6 +72,9 @@
                                         </select>
                                     </div>
                             </div>
+                             <div class="form-control editContent" style="outline: none; cursor: inherit;">
+                               <input type="file" name="image" size="50"/>
+                            </div>
                             <div class="form-control editContent" style="outline: none; cursor: inherit;">
                                 <textarea name="bdescription" placeholder="Book Description" required=""></textarea>
                             </div>
