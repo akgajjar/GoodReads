@@ -1,7 +1,7 @@
 <%@page import="com.goodreads.bin.user_master"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-
+    
 <%
   
   response.setHeader("Cache-Control", "no-cache");
@@ -61,7 +61,7 @@
 						action="../user_masterAdminController">
 
 						<div class="form-group row">
-							<label class="col-sm-3 form-control-label">First Name</label>
+							<label class="col-sm-3 form-control-label" >First Name</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" name="fname"
 									style="width: 50%">
