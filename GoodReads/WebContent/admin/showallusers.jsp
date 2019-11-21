@@ -1,5 +1,4 @@
 <%@page import="com.goodreads.bin.user_master"%>
-<%@page import="java.util.List"%>
 <%@page import="com.goodreads.service.User_masterService"%>
 <%@page import="org.springframework.beans.factory.BeanFactory"%>
 <%@page import="org.springframework.beans.factory.xml.XmlBeanFactory"%>
