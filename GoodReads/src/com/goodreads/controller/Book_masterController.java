@@ -29,7 +29,7 @@ public class Book_masterController extends HttpServlet {
 		BeanFactory factory = new XmlBeanFactory(r);
 		Book_masterService bdao = (Book_masterService) factory.getBean("book_masterservice");
 		
-		if(action.equalsIgnoreCase("Signup"))
+		if(action.equalsIgnoreCase("Sell"))
 		{
 		
 			book_master b=new book_master();
@@ -43,7 +43,7 @@ public class Book_masterController extends HttpServlet {
 		
 			
 			bdao.saveBook(b);
-			request.getRequestDispatcher("sell.jsp").include(request, response);
+			request.getRequestDispatcher("index.jsp").include(request, response);
 
 
 	}

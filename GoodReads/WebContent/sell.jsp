@@ -55,7 +55,7 @@
                                 <input type="text" class="name" name="bname" placeholder="Book Name" required="">
                             </div>
                             <div class="form-control editContent" style="outline: none; cursor: inherit;">
-                                <input type="text" name="aname" placeholder="Author Name" required="">
+                                <input type="text" name="bauthor" placeholder="Author Name" required="">
                             </div>
                             <div class="form-control editContent" style="outline: none; cursor: inherit;">
                                 <input type="text" name="bprice" onkeypress="return isNumber(event)" placeholder="Book Price" required="">
@@ -73,10 +73,10 @@
                                     </div>
                             </div>
                             <div class="form-control editContent" style="outline: none; cursor: inherit;">
-                                <textarea name="bdesc" placeholder="Book Description" required=""></textarea>
+                                <textarea name="bdescription" placeholder="Book Description" required=""></textarea>
                             </div>
                             <div class="read mt-3">
-                                <input class="btn bt1" type="submit" style="outline: none; cursor: inherit; color: red;" value="Sell">
+                                <input name="action" class="btn bt1" type="submit" style="outline: none; cursor: inherit; color: red;" value="Sell">
                             </div>
                         </form>
                     </div>
