@@ -1,3 +1,4 @@
+<%@page import="java.util.List"%>
 <%@page import="com.goodreads.service.Book_category_masterService"%>
 <%@page import="com.goodreads.bin.book_category_master"%>
 <%@page import="com.goodreads.bin.user_master"%>
