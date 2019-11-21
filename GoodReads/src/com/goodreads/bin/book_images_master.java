@@ -1,7 +1,6 @@
 package com.goodreads.bin;
 
 import java.sql.Blob;
-import java.util.Set;
 
 public class book_images_master {
 
