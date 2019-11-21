@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20-Nov-2019, 9:43:56 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.goodreads.bin.book_images_master" table="BOOK_IMAGES_MASTER">
+        <id name="Image_Id" type="int">
+            <column name="IMAGE_ID"  length="10" />
+            <generator class="increment" />
+        </id>
+        <property name="Image_Url" type="java.sql.Blob" not-null="true" >
+            <column name="IMAGE_URL" />
+        </property>
+  
+         <many-to-one name="book" class="com.goodreads.bin.book_master" lazy="false" fetch="join" >
+           <column name="ISBN" length="13" />
+        </many-to-one>
+      
+    </class>
+</hibernate-mapping>

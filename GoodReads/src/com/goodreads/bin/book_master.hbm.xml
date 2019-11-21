@@ -48,12 +48,22 @@
             
         </set>
         
+        
+        <set name="images" table="BOOK_IMAGES_MASTER" inverse="true" lazy="false">
+            <key>
+                <column name="ISBN" length="13"/>
+            </key>
+            <one-to-many class="com.goodreads.bin.book_images_master" />
+        </set>  
+        
+        
         <set name="comments" table="COMMENT_MASTER" inverse="true" lazy="false">
             <key>
                 <column name="ISBN" length="13"/>
             </key>
             <one-to-many class="com.goodreads.bin.comment_master" />
         </set>  
+        
         <set name="bookmarks" table="BOOKMARK_MASTER" inverse="true" lazy="false">
             <key>
                 <column name="ISBN" length="13"  />

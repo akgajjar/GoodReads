@@ -29,6 +29,7 @@
 				<value>com//goodreads//bin//order_items_master.hbm.xml</value>
 				<value>com//goodreads//bin//payment_master.hbm.xml</value>
 				<value>com//goodreads//bin//rating_master.hbm.xml</value>
+				<value>com//goodreads//bin//book_images_master.hbm.xml</value>
 			</list>
 		</property>
 

@@ -17,10 +17,13 @@ public class book_master {
 	private String B_Type;
 	private Timestamp B_Date;
 	private Set<book_category_master> categories;
+	private Set<book_images_master> images;
 	private Set<comment_master> comments;
 	private Set<bookmark_master> bookmarks;
 	private Set<rating_master> ratings;
 	private Set<order_items_master> order_items;
+	
+	
 	public String getISBN() {
 		return ISBN;
 	}
@@ -92,6 +95,12 @@ public class book_master {
 	}
 	public void setCategories(Set<book_category_master> categories) {
 		this.categories = categories;
+	}
+	public Set<book_images_master> getImages() {
+		return images;
+	}
+	public void setImages(Set<book_images_master> images) {
+		this.images = images;
 	}
 	public Set<comment_master> getComments() {
 		return comments;
