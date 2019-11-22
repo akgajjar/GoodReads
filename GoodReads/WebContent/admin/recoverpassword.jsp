@@ -79,7 +79,12 @@
                   <div class="logo">
                     <h1>GoodReads</h1>
                   </div>
-                  <p>Description.</p>
+                  <p>Goodreads is like an e- bookstore website where books can be bought from the
+comfort of home through the Internet. This Website aims to provide books to
+needy person on rent and also buy it .Seller can sell used or new books on this
+platform. An online bookstore is a virtual store on the Internet where customers
+can browse the catalogue and select books of interest. User can select many books
+and those books stored in cart.</p>
                   
                 </div>
               </div>

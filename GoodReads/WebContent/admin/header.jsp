@@ -44,7 +44,7 @@
               <!-- Navbar Header-->
               <div class="navbar-header">
                 <!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
-                  <div class="brand-text d-none d-lg-inline-block"><span>Bootstrap </span><strong>Dashboard</strong></div>
+                  <div class="brand-text d-none d-lg-inline-block"><span>GoodReads </span><strong>Dashboard</strong></div>
                   <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
@@ -126,8 +126,9 @@
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
           <ul class="list-unstyled">
-            <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
-            <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Tables </a>
+            <li class="active"><a href="index.jsp"> <i class="icon-home"></i>Home </a></li>
+           
+           <!--  <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Tables </a>
               <ul id="tablesDropdown" class="collapse list-unstyled ">
                 <li><a href="tables.html">Bootstrap tables</a></li>
                 <li><a href="tables-datatable.html">Datatable</a></li>
@@ -139,7 +140,7 @@
                 <li><a href="charts-gauge-sparkline.html">Gauge + Sparkline</a></li>
               </ul>
             </li>
-            
+            --> 
             <li><a href="#adminDropdown" aria-expanded="false" data-toggle="collapse"><i class="fa fa-users"></i>User </a>
               <ul id="adminDropdown" class="collapse list-unstyled ">
                 <li><a href="addadmin.jsp">Add Admin</a></li>
@@ -167,7 +168,7 @@
  		 </ul>
             </li>
             
-            <li><a href="#formsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Forms </a>
+            <!-- <li><a href="#formsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Forms </a>
               <ul id="formsDropdown" class="collapse list-unstyled ">
                 <li><a href="forms.html">Basic forms</a></li>
                 <li><a href="forms-advanced.html">Advanced forms</a></li>
@@ -205,5 +206,7 @@
             <li> <a href="#"> <i class="icon-mail"></i>Demo </a></li>
             <li> <a href="#"> <i class="icon-picture"></i>Demo </a></li>
           </ul>
-        </nav>
+     -->
+     
+         </nav>
     

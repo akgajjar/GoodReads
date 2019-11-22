@@ -30,21 +30,56 @@
     		
   
   %>
+  
+  <style>
+  div.polaroid {
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+div.container {
+  padding: 10px;
+}
+
+div.polaroid : hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+  </style>
  <jsp:include page="header.jsp"></jsp:include>
  
  
         <div class="content-inner">
           <!-- Page Header-->
-          <header class="page-header">
+ 
+ 
+ <!-- <div class="container" style="margin-left: 10%">
+
+<a href="frm_student.jsp">
+<div class="polaroid col-sm-4" style="margin: 10px;">
+  <div style="margin-top: 30%;">
+  <i class="fa fa-users nav_icon fa-3x" aria-hidden="true"></i>
+  <h3>Student Details</h3>
+   <a href="#"> BTech </a><br>
+   <a href="#"> MTech </a><br>
+   <a href="#"> MSc(IT) </a> <br>
+   <a href="#"> MDes </a>
+  </div>
+</div>
+</a>
+ </div></div>
+ 
+ -->        <!--   <header class="page-header">
             <div class="container-fluid">
               <h2 class="no-margin-bottom">Dashboard</h2>
             </div>
           </header>
-          <!-- Dashboard Counts Section-->
+          Dashboard Counts Section
           <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">
               <div class="row bg-white has-shadow">
-                <!-- Item -->
+                Item
                 <div class="col-xl-3 col-sm-6">
                   <div class="item d-flex align-items-center">
                     <div class="icon bg-violet"><i class="icon-user"></i></div>
@@ -56,7 +91,7 @@
                     <div class="number"><strong>25</strong></div>
                   </div>
                 </div>
-                <!-- Item -->
+                Item
                 <div class="col-xl-3 col-sm-6">
                   <div class="item d-flex align-items-center">
                     <div class="icon bg-red"><i class="icon-padnote"></i></div>
@@ -68,7 +103,7 @@
                     <div class="number"><strong>70</strong></div>
                   </div>
                 </div>
-                <!-- Item -->
+                Item
                 <div class="col-xl-3 col-sm-6">
                   <div class="item d-flex align-items-center">
                     <div class="icon bg-green"><i class="icon-bill"></i></div>
@@ -80,7 +115,7 @@
                     <div class="number"><strong>40</strong></div>
                   </div>
                 </div>
-                <!-- Item -->
+                Item
                 <div class="col-xl-3 col-sm-6">
                   <div class="item d-flex align-items-center">
                     <div class="icon bg-orange"><i class="icon-check"></i></div>
@@ -95,50 +130,82 @@
               </div>
             </div>
           </section>
-          <!-- Dashboard Header Section    -->
+         -->
+           <!-- Dashboard Header Section    -->
           <section class="dashboard-header">
             <div class="container-fluid">
-              <div class="row">
-                <!-- Statistics -->
-                <div class="statistics col-lg-3 col-12">
-                  <div class="statistic d-flex align-items-center bg-white has-shadow">
-                    <div class="icon bg-red"><i class="fa fa-tasks"></i></div>
-                    <div class="text"><strong>234</strong><br><small>Applications</small></div>
-                  </div>
-                  <div class="statistic d-flex align-items-center bg-white has-shadow">
-                    <div class="icon bg-green"><i class="fa fa-calendar-o"></i></div>
-                    <div class="text"><strong>152</strong><br><small>Interviews</small></div>
-                  </div>
-                  <div class="statistic d-flex align-items-center bg-white has-shadow">
-                    <div class="icon bg-orange"><i class="fa fa-paper-plane-o"></i></div>
-                    <div class="text"><strong>147</strong><br><small>Forwards</small></div>
-                  </div>
-                </div>
-                <!-- Line Chart            -->
-                <div class="chart col-lg-6 col-12">
-                  <div class="line-chart bg-white d-flex align-items-center justify-content-center has-shadow">
-                    <canvas id="lineCahrt"></canvas>
-                  </div>
-                </div>
-                <div class="chart col-lg-3 col-12">
-                  <!-- Bar Chart   -->
-                  <div class="bar-chart has-shadow bg-white">
-                    <div class="title"><strong class="text-violet">95%</strong><br><small>Current Server Uptime</small></div>
-                    <canvas id="barChartHome"></canvas>
-                  </div>
-                  <!-- Numbers-->
-                  <div class="statistic d-flex align-items-center bg-white has-shadow">
-                    <div class="icon bg-green"><i class="fa fa-line-chart"></i></div>
-                    <div class="text"><strong>99.9%</strong><br><small>Success Rate</small></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+            <div class="container" style="margin-left: 10%">
+
+<a href="addadmin.jsp">
+<div class="polaroid col-sm-4" style="margin:10px;width:700px;height:200px;background-color: white;text-decoration: none">
+  <div style="margin-top: 30%;">
+  <br><br>
+  <i class="fa fa-users nav_icon fa-3x" aria-hidden="true"></i>
+  <h3>Add Admin</h3>
+   </div>
+</div>
+</a>
+ </div>
+
+<a href="showallusers.jsp" style="padding-left: 150px;">
+<div class="polaroid col-sm-4" style="width:700px;height:200px;background-color: white;text-decoration: none">
+  <div style="margin-top: 30%;">
+  <br><br>
+  <i class="fa fa-users nav_icon fa-3x" aria-hidden="true"></i>
+  <h3>Show All Users</h3>
+   </div>
+</div>
+</a>
+ </div>
+</section></div>
+<!-- <a href="addcategory.jsp">
+<div class="polaroid col-sm-4" style="margin:10px;width:700px;height:200px;background-color: white;text-decoration: none">
+  <div style="margin-top: 30%;">
+  <br><br>
+  <i class="fa fa-th-large nav_icon fa-3x" aria-hidden="true"></i>
+  <h3>Add Category</h3>
+   </div>
+</div>
+</a>
+</div>
+
+<a href="showallcategories.jsp">
+<div class="polaroid col-sm-4" style="margin:10px;width:700px;height:200px;background-color: white;text-decoration: none">
+  <div style="margin-top: 30%;">
+  <br><br>
+  <i class="fa fa-th-large nav_icon fa-3x" aria-hidden="true"></i>
+  <h3>Show All Categories</h3>
+   </div>
+</div>
+</a>
+</div>
+
+<a href="showallbooks.jsp">
+<div class="polaroid col-sm-4" style="margin:10px;width:700px;height:200px;background-color: white;text-decoration: none">
+  <div style="margin-top: 30%;">
+  <br><br>
+  <i class="fa fa-book nav_icon fa-3x" aria-hidden="true"></i>
+  <h3>Show All Books</h3>
+   </div>
+</div>
+</a>
+</div>
+
+<a href="showallorders.jsp">
+<div class="polaroid col-sm-4" style="margin:10px;width:700px;height:200px;background-color: white;text-decoration: none">
+  <div style="margin-top: 30%;">
+  <br><br>
+  <i class="fa fa-envelope nav_icon fa-3x" aria-hidden="true"></i>
+  <h3>Show All Orders</h3>
+   </div>
+</div>
+</a>
+ </div> -->
+ 
           <!-- Projects Section-->
-          <section class="projects no-padding-top">
+       <!--    <section class="projects no-padding-top">
             <div class="container-fluid">
-              <!-- Project-->
+              Project
               <div class="project">
                 <div class="row bg-white has-shadow">
                   <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
@@ -161,7 +228,7 @@
                   </div>
                 </div>
               </div>
-              <!-- Project-->
+              Project
               <div class="project">
                 <div class="row bg-white has-shadow">
                   <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
@@ -184,7 +251,7 @@
                   </div>
                 </div>
               </div>
-              <!-- Project-->
+              Project
               <div class="project">
                 <div class="row bg-white has-shadow">
                   <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
@@ -207,7 +274,7 @@
                   </div>
                 </div>
               </div>
-              <!-- Project-->
+              Project
               <div class="project">
                 <div class="row bg-white has-shadow">
                   <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
@@ -232,11 +299,11 @@
               </div>
             </div>
           </section>
-          <!-- Client Section-->
+          Client Section
           <section class="client no-padding-top">
             <div class="container-fluid">
               <div class="row">
-                <!-- Work Amount  -->
+                Work Amount 
                 <div class="col-lg-4">
                   <div class="work-amount card">
                     <div class="card-close">
@@ -254,7 +321,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- Client Profile -->
+                Client Profile
                 <div class="col-lg-4">
                   <div class="client card">
                     <div class="card-close">
@@ -281,7 +348,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- Total Overdue             -->
+                Total Overdue            
                 <div class="col-lg-4">
                   <div class="overdue card">
                     <div class="card-close">
@@ -302,11 +369,11 @@
               </div>
             </div>
           </section>
-          <!-- Feeds Section-->
+          Feeds Section
           <section class="feeds no-padding-top">
             <div class="container-fluid">
               <div class="row">
-                <!-- Trending Articles-->
+                Trending Articles
                 <div class="col-lg-6">
                   <div class="articles card">
                     <div class="card-close">
@@ -348,7 +415,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- Check List -->
+                Check List
                 <div class="col-lg-6">
                   <div class="checklist card">
                     <div class="card-close">
@@ -391,11 +458,11 @@
               </div>
             </div>
           </section>
-          <!-- Updates Section                                                -->
+          Updates Section                                               
           <section class="updates no-padding-top">
             <div class="container-fluid">
               <div class="row">
-                <!-- Recent Updates-->
+                Recent Updates
                 <div class="col-lg-4">
                   <div class="recent-updates card">
                     <div class="card-close">
@@ -408,7 +475,7 @@
                       <h3 class="h4">Recent Updates</h3>
                     </div>
                     <div class="card-body no-padding">
-                      <!-- Item-->
+                      Item
                       <div class="item d-flex justify-content-between">
                         <div class="info d-flex">
                           <div class="icon"><i class="icon-rss-feed"></i></div>
@@ -419,7 +486,7 @@
                         </div>
                         <div class="date text-right"><strong>24</strong><span>May</span></div>
                       </div>
-                      <!-- Item-->
+                      Item
                       <div class="item d-flex justify-content-between">
                         <div class="info d-flex">
                           <div class="icon"><i class="icon-rss-feed"></i></div>
@@ -430,7 +497,7 @@
                         </div>
                         <div class="date text-right"><strong>24</strong><span>May</span></div>
                       </div>
-                      <!-- Item        -->
+                      Item       
                       <div class="item d-flex justify-content-between">
                         <div class="info d-flex">
                           <div class="icon"><i class="icon-rss-feed"></i></div>
@@ -441,7 +508,7 @@
                         </div>
                         <div class="date text-right"><strong>24</strong><span>May</span></div>
                       </div>
-                      <!-- Item-->
+                      Item
                       <div class="item d-flex justify-content-between">
                         <div class="info d-flex">
                           <div class="icon"><i class="icon-rss-feed"></i></div>
@@ -452,7 +519,7 @@
                         </div>
                         <div class="date text-right"><strong>24</strong><span>May</span></div>
                       </div>
-                      <!-- Item-->
+                      Item
                       <div class="item d-flex justify-content-between">
                         <div class="info d-flex">
                           <div class="icon"><i class="icon-rss-feed"></i></div>
@@ -466,7 +533,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- Daily Feeds -->
+                Daily Feeds
                 <div class="col-lg-4">
                   <div class="daily-feeds card"> 
                     <div class="card-close">
@@ -479,7 +546,7 @@
                       <h3 class="h4">Daily Feeds</h3>
                     </div>
                     <div class="card-body no-padding">
-                      <!-- Item-->
+                      Item
                       <div class="item">
                         <div class="feed d-flex justify-content-between">
                           <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src=" ./img/avatar-5.jpg" alt="person" class="img-fluid rounded-circle"></a>
@@ -491,7 +558,7 @@
                           <div class="date text-right"><small>5min ago</small></div>
                         </div>
                       </div>
-                      <!-- Item-->
+                      Item
                       <div class="item"> 
                         <div class="feed d-flex justify-content-between">
                           <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src=" ./img/avatar-2.jpg" alt="person" class="img-fluid rounded-circle"></a>
@@ -504,7 +571,7 @@
                           <div class="date text-right"><small>5min ago</small></div>
                         </div>
                       </div>
-                      <!-- Item-->
+                      Item
                       <div class="item clearfix">
                         <div class="feed d-flex justify-content-between">
                           <div class="feed-body d-flex justify-content-between"><a href="#" class="feed-profile"><img src=" ./img/avatar-3.jpg" alt="person" class="img-fluid rounded-circle"></a>
@@ -521,7 +588,7 @@
                     </div>
                   </div>
                 </div>
-                <!-- Recent Activities -->
+                Recent Activities
                 <div class="col-lg-4">
                   <div class="recent-activities card">
                     <div class="card-close">
@@ -576,7 +643,7 @@
               </div>
             </div>
           </section>
-          <!-- Page Footer-->
+     -->      <!-- Page Footer-->
           <script src=" ./vendor/chart.js/Chart.min.js"></script>
     <script src=" ./js/charts-home.js"></script>
     
